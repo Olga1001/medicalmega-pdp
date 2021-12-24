@@ -1,0 +1,26 @@
+@mixin box($width,$height: $width) 
+  width: $width
+  height: $height
+
+@mixin d-flex($justify: space-between, $items: center, $wrap:false, $align:true) 
+  display: flex
+  justify-content: $justify
+  align-items: $items
+  @if $wrap 
+    flex-wrap: $wrap
+
+@mixin centerXY($x:50%,$y:50%) 
+  position: absolute
+  left: $x
+  top: $y
+  transform: translate(-$x, -$y)
+
+@mixin centerY($y:50%) 
+  position: absolute
+  top: $y
+  transform: translateY(-$y)
+
+@mixin centerX($x:50%) 
+  position: absolute
+  left: $x
+  transform: translateX(-$x)

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="utf-8">
+    <title>CONTACTS</title><!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE = edge"><![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="">
+    <link rel="shortcut icon" href="img/fav_icon.png" type="image/png">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container"> 
+          <div class="flex-center-between">
+            <div class="align-items-center"><a class="logo" href="#"></a>
+              <nav class="navmenu"> 
+                <ul class="menu"> 
+                  <li><a href="#">Showcase</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Contacts</a></li>
+                  <li><a href="#">Careers</a></li>
+                </ul>
+              </nav>
+            </div>
+            <div class="align-items-center"> 
+              <div class="select"> 
+                <select class="c-white">
+                  <option value="ENG">ENG</option>
+                  <option value="RU">RU</option>
+                </select>
+              </div><a class="btn btn-yellow" href="#">Get in touch</a>
+              <button class="burger mr-20" type="button"><span class="burger-line burger-line-top"></span><span class="burger-line burger-line-center"></span><span class="burger-line burger-line-bottom"></span></button>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="wrapper-content">
+        <main class="main-contacts">
+          <div class="container">
+            <h1 class="c-black fw-semi">CONTACTS</h1>
+            <div class="justify-content-lg-between"> 
+              <div class="contacts-left"></div>
+              <div id="map"> </div>
+            </div>
+          </div>
+          <div class="container"> 
+            <h2>Contact us</h2>
+            <form class="flex-wrap justify-content-between"> 
+              <div class="form-contact">
+                <div class="flex-wrap"> 
+                  <div class="w-md-50 w-100 pr-md-25">
+                    <label class="field"> <span>Name *:</span>
+                      <input type="text" value="John Smith" required>
+                    </label>
+                    <label class="field"> <span>Email *:</span>
+                      <input type="text" value="johnsmith@gmail.com">
+                    </label>
+                  </div>
+                  <div class="w-md-50 w-100 pl-md-25">
+                    <label class="field"> <span>Phone:</span>
+                      <input type="text" value="+380674090018 ">
+                    </label>
+                    <label class="field"> <span>Site:</span>
+                      <input type="text" value="apcore.dev">
+                    </label>
+                  </div>
+                </div>
+                <label class="field-textarea w-100"> <span>Message *:</span>
+                  <textarea></textarea>
+                </label>
+                <div class="d-sm-block d-none">
+                  <div class="captcha">captcha</div>
+                  <button class="btn" type="submit">Send message</button>
+                </div>
+              </div>
+              <div class="col"> 
+                <p class="fw-semi">Need help? </p>
+                <p>Feel free to contact us. </p>
+                <ul class="n-list"> 
+                  <li class="align-items-center"> 
+                    <svg class="svg-sprite-icon icon-mail wh-20 c-yellow mr-6">
+                      <use xlink:href="img/sprite/symbol/sprite.svg#mail"></use>
+                    </svg>
+                    <p class="fw-semi">hello@apcore.dev</p>
+                  </li>
+                  <li class="align-items-center"> 
+                    <svg class="svg-sprite-icon icon-phone wh-20 c-yellow mr-6">
+                      <use xlink:href="img/sprite/symbol/sprite.svg#phone"></use>
+                    </svg>
+                    <div>
+                      <p>For US time zones</p>
+                      <p class="fw-semi">+1 310 774 60 84</p>
+                    </div>
+                  </li>
+                  <li class="align-items-center"> 
+                    <svg class="svg-sprite-icon icon-phone wh-20 c-yellow mr-6">
+                      <use xlink:href="img/sprite/symbol/sprite.svg#phone"></use>
+                    </svg>
+                    <div>
+                      <p>For EU time zones</p>
+                      <p class="fw-semi">+380 67 409 00 18</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="d-sm-none w-100">
+                <div class="captcha">captcha</div>
+                <button class="btn" type="submit">Send message</button>
+              </div>
+            </form>
+          </div>
+        </main>
+        <footer class="footer">
+          <div class="container">
+            <div class="justify-content-between footer-row">
+              <div class="align-items-center footer-row_i"> 
+                <div><a class="logo" href="#"> </a>
+                  <p class="footer-text">Your technology <br> partner</p>
+                </div>
+                <div class="socials"> <a href="#"> 
+                    <svg class="svg-sprite-icon icon-facebook">
+                      <use xlink:href="img/sprite/symbol/sprite.svg#facebook"></use>
+                    </svg></a><a href="#"> 
+                    <svg class="svg-sprite-icon icon-twitter">
+                      <use xlink:href="img/sprite/symbol/sprite.svg#twitter"></use>
+                    </svg></a><a href="#"> 
+                    <svg class="svg-sprite-icon icon-instagram">
+                      <use xlink:href="img/sprite/symbol/sprite.svg#instagram"></use>
+                    </svg></a><a href="#"> 
+                    <svg class="svg-sprite-icon icon-in">
+                      <use xlink:href="img/sprite/symbol/sprite.svg#in"></use>
+                    </svg></a>
+                </div>
+              </div>
+              <div class="flex-wrap max-655 justify-content-between w-100">
+                <ul class="footer-contact"> 
+                  <li class="align-items-center"> 
+                    <svg class="svg-sprite-icon icon-mail wh-20 c-yellow mr-6">
+                      <use xlink:href="img/sprite/symbol/sprite.svg#mail"></use>
+                    </svg>
+                    <p class="fw-semi">hello@apcore.dev</p>
+                  </li>
+                  <li class="align-items-center"> 
+                    <svg class="svg-sprite-icon icon-phone wh-20 c-yellow mr-6">
+                      <use xlink:href="img/sprite/symbol/sprite.svg#phone"></use>
+                    </svg>
+                    <p class="fw-semi">US +1 310 774 60 84</p>
+                  </li>
+                  <li class="align-items-center"> 
+                    <svg class="svg-sprite-icon icon-phone wh-20 c-yellow mr-6">
+                      <use xlink:href="img/sprite/symbol/sprite.svg#phone"></use>
+                    </svg>
+                    <p class="fw-semi">EU +380 67 409 00 18</p>
+                  </li>
+                </ul>
+                <div class="c-white fs-18 mx-20"> 
+                  <p class="underline">USA</p>207 S Beachwood Dr<br> Burbank, California<br>91506
+                </div>
+                <div class="c-white fs-18"> 
+                  <p class="underline">Ukraine</p>Kyiv<br>Verkhnii Val 10<br>04071
+                </div>
+              </div>
+            </div>
+            <p class="footer-copyright"> 
+              <svg class="svg-sprite-icon icon-bx-copyright">
+                <use xlink:href="img/sprite/symbol/sprite.svg#bx-copyright"></use>
+              </svg>INLIGHT 2020 All right reserved
+            </p>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

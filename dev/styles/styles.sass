@@ -1,0 +1,46 @@
+@import "utils/libs"
+@import "utils/vars"
+@import "utils/mixins"
+@import "utils/fonts"
+@import "utils/sprite"
+
+//with site
+*, *::before, *::after
+  -webkit-appearance: none
+  box-sizing: border-box
+  padding: 0
+  margin: 0
+
+body
+  border-top: 0
+
+button
+  border: none
+  appearance: none
+
+input
+  appearance: none
+  border: none
+
+.container
+  max-width: 1270px
+  padding: 0 15px
+  width: 100%
+  margin: 0 auto
+
+
+@import "modules/modules"
+
+.d-none
+  display: none 
+
+.w-100
+  width: 100%
+
+.w-fit-content
+  width: fit-content
+
+.relative
+  position: relative
+
+@import "utils/media"

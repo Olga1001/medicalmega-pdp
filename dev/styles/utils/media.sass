@@ -1,0 +1,134 @@
+@import "utils/vars"
+@import "utils/mixins"
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+
+@media only screen and (min-width: 768px)
+  .d-md-block
+    display: block
+@media only screen and (min-width: 1210px)
+  .align-items-lg-center
+    display: flex
+    align-items: center
+  .flex-lg-wrap
+    display: flex
+    flex-wrap: wrap
+  .justify-content-lg-around
+    display: flex
+    justify-content: space-around
+  .d-lg-none
+    display: none
+
+@media only screen and (max-width: 1209px)
+  .img_company
+    margin-left: 25px
+  .img_text
+    width: 100%
+    margin-left: 40px
+  .how_optimize_contain .flex-lg-wrap
+    background: none
+@media only screen and (max-width: 991px)
+  .header_new
+    padding: 14px 16px
+  .header_new .logo
+    width: 127px
+    height: 27px
+  .burger
+    display: block
+  .img_text
+    display: none
+  .header__input-wrap
+    flex-direction: column
+  input[type='submit']
+    max-width: 100%
+    width: 100%
+    margin: 10px auto 0
+    font-size: 16px
+    line-height: 20px
+  input[type='url']
+    font-size: 14px
+    text-align: center
+  .optimization_contain
+    padding-top: 60px
+    h1
+      font-size: 36px
+      line-height: 40px
+    h2
+      font-size: 30px
+      line-height: 123%
+    h3
+      font-size: 14px
+      line-height: 133%
+      text-align: left
+    p
+      font-size: 14px
+      line-height: 133%
+      margin-bottom: 15px
+  .performance_contain h2
+    text-align: left
+  .how_optimize_contain h2
+    margin-bottom: 47px
+  .performance_contain, .how_optimize_contain, .metrics_contain
+    margin-top: 80px
+  .growing_contain
+    margin-top: 97px
+    h2
+      text-align: left
+  .list-num
+    margin-left: 17px
+    li
+      font-size: 14px
+  .frame_growing
+    margin-top: 40px
+    padding: 20px 0 20px 35px
+    margin-bottom: 45px
+    &:after
+      content: none
+    &:before
+      width: 100%
+      height: calc(100% - 35px)
+      max-width: 328px
+    li
+      margin-bottom: 15px
+      font-size: 13px
+      line-height: 22px
+  .good_contain
+    margin-bottom: 30px
+    h2
+      text-align: left
+  .item_metric p
+    font-size: 12px
+    line-height: 18px
+    padding: 6px 10px 3px
+  .item_metric
+    margin: 5px!important
+    padding: 5px
+  .metrics_contain
+    padding: 0 5px
+  .metrics_list
+    min-height: auto
+  .metrics_contain
+    margin-bottom: 125px
+    h2
+      padding: 0 7px
+  .faq_contain
+    margin-bottom: 80px
+@media only screen and (max-width: 767px)
+  .accordion_item
+    padding: 14px 20px
+    min-height: 66px
+  .accordion_plus
+    +box(16px)
+  .accordion_drop
+    padding: 0 20px
+@media only screen and (max-width: 359px)
+  .optimization_contain
+    h1
+      font-size: 34px
+    input[type='submit']
+      padding: 0 15px
+    h2
+      font-size: 28px
+

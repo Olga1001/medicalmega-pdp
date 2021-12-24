@@ -1,0 +1,54 @@
+header.header
+    .supbar
+        .container.flex-center-between
+            p.align-items-center
+                img(src='img/common/quotation.svg' alt='icon quotation')
+                | Customer Service
+            .d-flex
+                a(href="tel:17182084380")
+                    span.fw-light Local Phone #
+                    | 1-718-208-4380
+                a.ml-40(href="tel:18556336342")
+                    span.fw-light Toll Free Phone #
+                    | 1-855-MED-MEGA (633-6342)
+    .midbar
+        .container.flex-center-between
+            a.logo(href="#") Medical
+                span Mega
+            button.btn.btn_white(type="button") Advanced Search
+            form.form-search
+                input(type="text" placeholder="Search by Name")
+                button(type="submit")
+            .align-items-center
+                a.align-items-center.midbar_action(href="#")
+                    img.mr-12(src='img/common/user.svg' alt='icon account')
+                    span Account
+                a.align-items-center.ml-40.midbar_action(href="#")
+                    img.mr-12(src='img/common/cart.svg' alt='icon Cart')
+                    span Cart
+
+    .subbar
+        .container.d-flex
+            nav.nav_category
+                .align-items-center
+                    .burger_category
+                        .burger_line
+                        .burger_line
+                        .burger_line
+                    p.p-main All Categories
+                ul.menu_category
+                    each val in []
+                        li
+            ul.d-flex.category_popular
+                each val in ['New Products','Sale Products','Hand Sanitizing','Wound care','Gloves','Disinfectants','Ostomy','Instruments']
+                    li 
+                        a(href="#")=val
+
+
+
+
+
+    button.burger#burger(type="button")
+        span.burger-line.burger-line-top
+        span.burger-line.burger-line-center
+        span.burger-line.burger-line-bottom
