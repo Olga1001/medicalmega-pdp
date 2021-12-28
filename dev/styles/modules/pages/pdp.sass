@@ -22,7 +22,7 @@
 
 .col_right
     width: calc(100% - 456px)
-    mac-width: calc(100% - 456px - 48px)
+    max-width: calc(100% - 456px - 48px)
 
 .side_one
     width: 96px 
@@ -41,10 +41,16 @@
         border-radius: 2px
         padding: 2px 
         margin-bottom: 8px
+    img 
+        +box(100%)
+        object-fit: contain
 
 .slider-for
     +box(360px)
     margin-bottom: 12px
+    img 
+        +box(100%)
+        object-fit: contain
 
 .list 
     margin-bottom: 32px
@@ -102,13 +108,13 @@
     cursor: pointer
     +box(40px)
     margin: 0 8px
-    &:hover 
-        &:before, &:after 
-            background: #1E3944
     &:before, &:after 
         +centerXY
-        background: #BCC4C7
         transition: all 0.3s ease
+        background: #1E3944
+    &[disabled]
+        &:before, &:after 
+            background: #BCC4C7
     &:before
         content: ''
         +box(14px,2px)
@@ -125,7 +131,7 @@
         font-size: 16px
         line-height: 150%
         margin-bottom: 15px
-
+    
 .tabs-discription
     li 
         font-size: 14px
@@ -166,3 +172,14 @@
         padding: 0 10px
         font-size: 12px
         width: 100%
+
+.similar-products
+    padding: 60px 0
+    h2 
+        font-weight: 600
+        font-size: 22px
+        line-height: 27px
+        margin-bottom: 56px
+
+.product 
+    padding-bottom: 45px

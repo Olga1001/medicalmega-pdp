@@ -11,7 +11,7 @@ block content
 				+breadcrumbs-item('Home ','href')
 				+breadcrumbs-item(' > Hand Sanitizing','href')
 				+breadcrumbs-item(' > Face Mask, 3 Ply, Ear Loop Box of 50')
-			.flex-wrap.w-100.justify-content-between  
+			.flex-wrap.w-100.justify-content-between.product  
 				.col_left.flex-wrap 
 					.side_one
 						.slider-nav
@@ -75,12 +75,12 @@ block content
 								p.fs-16 Price:
 								p.fs-24 $2.75
 							.flex-center-center.calc 
-								button.btn-calc.btn-calc_minus(type="button")
+								button.btn-calc.btn-calc_minus(type="button" disabled)
 								input.calc-qty(type="number" value="1")
 								button.btn-calc.btn-calc_plus(type="button")
 							button.btn.btn_dark(type="button") Add to Cart
 			section.similar-products
-				h2 Similar Products
+				h2.text-center Similar Products
 				.justify-content-between 
 					- 
 						var cards = [
@@ -118,7 +118,7 @@ block content
 									button.btn-calc.btn-calc_minus(type="button")
 									input.calc-qty(type="number" value="1")
 									button.btn-calc.btn-calc_plus(type="button")
-								button.btn.btn_dark(type="buttom")
+								button.btn.btn_dark(type="button")
 									span $
 										=val.price 
 										|  | Add to Cart
