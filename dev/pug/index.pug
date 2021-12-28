@@ -16,19 +16,19 @@ block content
 					.side_one
 						.slider-nav
 							.slide 
-								img(src='' alt='image 1')
+								img(src='https://medicalmegaimgs.net/prod/uploaded/product/159907855915375725325f50009f9b40e.jpg' alt='image 1')
 							.slide 
-								img(src='' alt='image 2')
+								img(src='https://medicalmegaimgs.net/prod/uploaded/product/159907855915375725325f50009f9b40e.jpg' alt='image 2')
 						.trustpilot trustpilot
 					
 					.side_two
 						.slider-for
 							.slide 
-								img(src='' alt='image 2')
+								img(src='https://medicalmegaimgs.net/prod/uploaded/product/159907855915375725325f50009f9b40e.jpg' alt='image 2')
 						p.text-small.text-center Image shown for reference purposes only. Actual product appearance may vary.
 				.col_right 
 					.range 
-						.flex-center-between.fs-12 
+						.flex-center-between
 							p 
 								span.c-gray Your Order: 
 								| $15.00
@@ -51,12 +51,78 @@ block content
 								li 
 									| Manufacturer: 
 									span.fw-semi Generica
+							ul.tabs-discription.d-flex
+								li.active Product details
+								li Product composition
+								li Shipping details
+							.content-discription
+								.content-item.active 
+									p 70% Alcohol with Aloe Hand Sanitizer, Citrus Fragrance, 4oz.
+									p This waterless formula allows use everywhere, anytime. Clinical studies performed by independent laboratories using FDA recommended study (test) guidelines concluded that Hydrox Waterless Instant Hand Sanitizers demonstrate rapid kill times:
+									p On a broad range of gram-negative and gram-positive bacteria.
+									p On Antibiotic-resistant organisms.
+									p Ethyl alcohol's exceptional cidal activity has led to its recognition as the most effective agent available for a waterless hand sanitizer.
+								.content-item
+								.content-item
 						.product_sidebar
 							.align-items-center 
-								img(src='' alt='icon shipping')
+								img.mr-12(src='img/common/car.svg' alt='icon shipping')
 								div 
 									p.c-red.text-up.fw-semi.l-t-02 Estimated shipping
 									p.c-gray 2-3 business days*
 							.line
+							.flex-center-between.fw-semi.price
+								p.fs-16 Price:
+								p.fs-24 $2.75
+							.flex-center-center.calc 
+								button.btn-calc.btn-calc_minus(type="button")
+								input.calc-qty(type="number" value="1")
+								button.btn-calc.btn-calc_plus(type="button")
+							button.btn.btn_dark(type="button") Add to Cart
+			section.similar-products
+				h2 Similar Products
+				.justify-content-between 
+					- 
+						var cards = [
+							{
+								image_url: 'https://medicalmegaimgs.net/prod/uploaded/product/159907855915375725325f50009f9b40e.jpg',
+								name: 'Procedure Surgical Face Mask, 3 Ply, Ear Loop, Blue',
+								price: '15.95'
+							},
+							
+							{
+								image_url: 'https://medicalmegaimgs.net/prod/uploaded/product/159907855915375725325f50009f9b40e.jpg',
+								name: '3M Particulate Respirator Mask',
+								price: '15.95'
+							},
+							
+							{
+								image_url: 'https://medicalmegaimgs.net/prod/uploaded/product/159907855915375725325f50009f9b40e.jpg',
+								name: 'Hand Sanitizer, 70% Alcohol with Aloe , Citrus Fragrance, 4oz',
+								price: '2.75'
+							},
+							
+							{
+								image_url: 'https://medicalmegaimgs.net/prod/uploaded/product/159907855915375725325f50009f9b40e.jpg',
+								name: 'Ansel Latex Exam Gloves, Medium Box of 150',
+								price: '150.00'
+							}
+						]
+					each val in cards
+						.card
+							a(href="#")
+								img(src=val.image_url alt=val.name)
+								span.card_name=val.name
+							div
+								.flex-center-center.calc 
+									button.btn-calc.btn-calc_minus(type="button")
+									input.calc-qty(type="number" value="1")
+									button.btn-calc.btn-calc_plus(type="button")
+								button.btn.btn_dark(type="buttom")
+									span $
+										=val.price 
+										|  | Add to Cart
+
+							
 
 
