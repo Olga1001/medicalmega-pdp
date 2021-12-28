@@ -31,9 +31,11 @@ block content
 						.flex-center-between
 							p 
 								span.c-gray Your Order: 
-								| $15.00
+								| $
+								span#order-pr 15.00
 							p.text-up 
-								span.c-red.fw-semi $135.00 
+								span.c-red.fw-semi $
+									span#last-pr 135.00 
 								| left for free shipping
 						.range_slider
 							span
@@ -62,8 +64,8 @@ block content
 									p On a broad range of gram-negative and gram-positive bacteria.
 									p On Antibiotic-resistant organisms.
 									p Ethyl alcohol's exceptional cidal activity has led to its recognition as the most effective agent available for a waterless hand sanitizer.
-								.content-item
-								.content-item
+								.content-item 2
+								.content-item 3
 						.product_sidebar
 							.align-items-center 
 								img.mr-12(src='img/common/car.svg' alt='icon shipping')
@@ -115,7 +117,7 @@ block content
 								span.card_name=val.name
 							div
 								.flex-center-center.calc 
-									button.btn-calc.btn-calc_minus(type="button")
+									button.btn-calc.btn-calc_minus(type="button" disabled)
 									input.calc-qty(type="number" value="1")
 									button.btn-calc.btn-calc_plus(type="button")
 								button.btn.btn_dark(type="button")

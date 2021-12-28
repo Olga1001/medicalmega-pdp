@@ -148,9 +148,15 @@
             border-bottom-color: #091114
             font-weight: 600
             color: #091114
+            
+.content-item
+    display: none 
+    &.active 
+        display: block
 
 .card
     max-width: 281px
+    width: calc(25% - 10px)
     background: #FFFFFF
     border: 1px solid #BCC4C7
     border-radius: 4px

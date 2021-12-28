@@ -12,20 +12,39 @@ header.header
                     span.fw-light Toll Free Phone #
                     | 1-855-MED-MEGA (633-6342)
     .midbar
-        .container.flex-center-between
-            a.logo(href="#") Medical
-                span Mega
-            button.btn.btn_white(type="button") Advanced Search
-            form.form-search
-                input(type="text" placeholder="Search by Name")
-                button(type="submit")
-            .align-items-center
-                a.align-items-center.midbar_action(href="#")
-                    img.mr-12(src='img/common/user.svg' alt='icon account')
-                    span Account
-                a.align-items-center.ml-40.midbar_action(href="#")
-                    img.mr-12(src='img/common/cart.svg' alt='icon Cart')
-                    span Cart
+        .container
+            .flex-center-between
+                a.logo(href="#") Medical
+                    span Mega
+                button.btn.btn_white(type="button") Advanced Search
+                form.form-search
+                    input(type="text" placeholder="Search by Name")
+                    button(type="submit")
+                .align-items-center
+                    a.align-items-center.midbar_action(href="https://medicalmega.com/myaccount.html")
+                        img.mr-12(src='img/common/user.svg' alt='icon account')
+                        span Account
+                    a.align-items-center.ml-40.midbar_action(href="https://medicalmega.com/cart.html")
+                        img.mr-12(src='img/common/cart.svg' alt='icon Cart')
+                        span Cart
+            form.advanced-search.flex-center-between
+                p.fs-10 Advanced Search
+                .d-flex 
+                    input(type='text' placeholder='Enter Item #')
+                    input(type='text' placeholder='Enter Keyword')
+                    .select 
+                        select 
+                            option(value='Select Category' disabled selected) Select Category
+                            option(value='Category 1') Category 1
+                    .select 
+                        select 
+                            option(value='Select Manufacturer' disabled selected) Select Manufacturer
+                            option(value='Manufacturer 1') Manufacturer 1
+                    button.btn.btn_dark(type='submit') Submit
+                button.btn_reset(type='reset')
+                    
+
+                    
 
     .subbar
         .container.d-flex
@@ -43,9 +62,6 @@ header.header
                 each val in ['New Products','Sale Products','Hand Sanitizing','Wound care','Gloves','Disinfectants','Ostomy','Instruments']
                     li 
                         a(href="#")=val
-
-
-
 
 
     button.burger#burger(type="button")

@@ -22,13 +22,36 @@
           </div>
         </div>
         <div class="midbar">
-          <div class="container flex-center-between"><a class="logo" href="#">Medical<span>Mega</span></a>
-            <button class="btn btn_white" type="button">Advanced Search</button>
-            <form class="form-search">
-              <input type="text" placeholder="Search by Name">
-              <button type="submit"></button>
+          <div class="container">
+            <div class="flex-center-between"><a class="logo" href="#">Medical<span>Mega</span></a>
+              <button class="btn btn_white" type="button">Advanced Search</button>
+              <form class="form-search">
+                <input type="text" placeholder="Search by Name">
+                <button type="submit"></button>
+              </form>
+              <div class="align-items-center"><a class="align-items-center midbar_action" href="https://medicalmega.com/myaccount.html"><img class="mr-12" src="img/common/user.svg" alt="icon account"><span>Account</span></a><a class="align-items-center ml-40 midbar_action" href="https://medicalmega.com/cart.html"><img class="mr-12" src="img/common/cart.svg" alt="icon Cart"><span>Cart</span></a></div>
+            </div>
+            <form class="advanced-search flex-center-between">
+              <p class="fs-10">Advanced Search</p>
+              <div class="d-flex"> 
+                <input type="text" placeholder="Enter Item #">
+                <input type="text" placeholder="Enter Keyword">
+                <div class="select"> 
+                  <select> 
+                    <option value="Select Category" disabled selected>Select Category</option>
+                    <option value="Category 1">Category 1</option>
+                  </select>
+                </div>
+                <div class="select"> 
+                  <select> 
+                    <option value="Select Manufacturer" disabled selected>Select Manufacturer</option>
+                    <option value="Manufacturer 1">Manufacturer 1</option>
+                  </select>
+                </div>
+                <button class="btn btn_dark" type="submit">Submit</button>
+              </div>
+              <button class="btn_reset" type="reset"></button>
             </form>
-            <div class="align-items-center"><a class="align-items-center midbar_action" href="#"><img class="mr-12" src="img/common/user.svg" alt="icon account"><span>Account</span></a><a class="align-items-center ml-40 midbar_action" href="#"><img class="mr-12" src="img/common/cart.svg" alt="icon Cart"><span>Cart</span></a></div>
           </div>
         </div>
         <div class="subbar">
@@ -87,8 +110,8 @@
           <div class="col_right"> 
             <div class="range"> 
               <div class="flex-center-between">
-                <p> <span class="c-gray">Your Order: </span>$15.00</p>
-                <p class="text-up"> <span class="c-red fw-semi">$135.00 </span>left for free shipping</p>
+                <p> <span class="c-gray">Your Order: </span>$<span id="order-pr">15.00</span></p>
+                <p class="text-up"> <span class="c-red fw-semi">$<span id="last-pr">135.00 </span></span>left for free shipping</p>
               </div>
               <div class="range_slider"><span></span></div>
             </div>
@@ -116,8 +139,8 @@
                     <p>On Antibiotic-resistant organisms.</p>
                     <p>Ethyl alcohol's exceptional cidal activity has led to its recognition as the most effective agent available for a waterless hand sanitizer.</p>
                   </div>
-                  <div class="content-item"></div>
-                  <div class="content-item"></div>
+                  <div class="content-item">2</div>
+                  <div class="content-item">3</div>
                 </div>
               </div>
               <div class="product_sidebar">
@@ -148,7 +171,7 @@
             <div class="card"><a href="#"><img src="https://medicalmegaimgs.net/prod/uploaded/product/159907855915375725325f50009f9b40e.jpg" alt="Procedure Surgical Face Mask, 3 Ply, Ear Loop, Blue"><span class="card_name">Procedure Surgical Face Mask, 3 Ply, Ear Loop, Blue</span></a>
               <div>
                 <div class="flex-center-center calc"> 
-                  <button class="btn-calc btn-calc_minus" type="button"></button>
+                  <button class="btn-calc btn-calc_minus" type="button" disabled></button>
                   <input class="calc-qty" type="number" value="1">
                   <button class="btn-calc btn-calc_plus" type="button"></button>
                 </div>
@@ -158,7 +181,7 @@
             <div class="card"><a href="#"><img src="https://medicalmegaimgs.net/prod/uploaded/product/159907855915375725325f50009f9b40e.jpg" alt="3M Particulate Respirator Mask"><span class="card_name">3M Particulate Respirator Mask</span></a>
               <div>
                 <div class="flex-center-center calc"> 
-                  <button class="btn-calc btn-calc_minus" type="button"></button>
+                  <button class="btn-calc btn-calc_minus" type="button" disabled></button>
                   <input class="calc-qty" type="number" value="1">
                   <button class="btn-calc btn-calc_plus" type="button"></button>
                 </div>
@@ -168,7 +191,7 @@
             <div class="card"><a href="#"><img src="https://medicalmegaimgs.net/prod/uploaded/product/159907855915375725325f50009f9b40e.jpg" alt="Hand Sanitizer, 70% Alcohol with Aloe , Citrus Fragrance, 4oz"><span class="card_name">Hand Sanitizer, 70% Alcohol with Aloe , Citrus Fragrance, 4oz</span></a>
               <div>
                 <div class="flex-center-center calc"> 
-                  <button class="btn-calc btn-calc_minus" type="button"></button>
+                  <button class="btn-calc btn-calc_minus" type="button" disabled></button>
                   <input class="calc-qty" type="number" value="1">
                   <button class="btn-calc btn-calc_plus" type="button"></button>
                 </div>
@@ -178,7 +201,7 @@
             <div class="card"><a href="#"><img src="https://medicalmegaimgs.net/prod/uploaded/product/159907855915375725325f50009f9b40e.jpg" alt="Ansel Latex Exam Gloves, Medium Box of 150"><span class="card_name">Ansel Latex Exam Gloves, Medium Box of 150</span></a>
               <div>
                 <div class="flex-center-center calc"> 
-                  <button class="btn-calc btn-calc_minus" type="button"></button>
+                  <button class="btn-calc btn-calc_minus" type="button" disabled></button>
                   <input class="calc-qty" type="number" value="1">
                   <button class="btn-calc btn-calc_plus" type="button"></button>
                 </div>
