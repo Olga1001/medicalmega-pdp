@@ -5,7 +5,8 @@ let btnPlus = document.querySelectorAll('.btn-calc_plus'),
     tabs = document.querySelectorAll('.tabs-discription li'),
     contents = document.querySelectorAll('.content-discription .content-item'),
     dataButton = document.querySelectorAll('[data-button]'),
-    closeBtn = document.querySelectorAll('[data-close]');
+    closeBtn = document.querySelectorAll('[data-close]'),
+    slidesNav = document.querySelectorAll('.slider-nav .slide');
 
 function changeQty(qty,action) {
     if (action == 'plus') {
@@ -22,10 +23,10 @@ function changeQty(qty,action) {
 }
 
 //+/- btns quantity
-for (let i = 0; i < calc.length; i++) {
+calc.forEach((el, i) => {
     btnPlus[i].addEventListener('click', () => changeQty(inputQty[i],'plus'))
     btnMinus[i].addEventListener('click', () => changeQty(inputQty[i],'minus'))
-}
+})
 
 //descriptions
 for (let i = 0; i < tabs.length; i++) {
@@ -54,7 +55,7 @@ for (let i = 0; i < dataButton.length; i++) {
 
 //zoom pdp
 function imageZoom(imgID, resultID) {
-    var img, lens, result, cx, cy;
+    let img, lens, result, cx, cy;
     img = document.getElementById(imgID);
     result = document.getElementById(resultID);
     /*create lens:*/
@@ -109,7 +110,7 @@ function imageZoom(imgID, resultID) {
     }
 }
 
-imageZoom("slider-for_img", "myresult");
+imageZoom("forImg", "zoomResult");
 
 document.querySelector('.slider-for').addEventListener('mousemove', (e) => {
     document.querySelector('.img-zoom-result').style.visibility = 'visible';
@@ -119,3 +120,16 @@ document.querySelector('.slider-for').addEventListener('mouseout', (e) => {
     document.querySelector('.img-zoom-result').style.visibility = 'hidden';
     document.querySelector('.img-zoom-lens').style.visibility = 'hidden';
 })
+
+//slider
+slidesNav.forEach((el,i) => {
+    el.addEventListener('click', () => {
+        el.closest('.slider-nav').querySelector('.active').classList.remove('active');
+        el.classList.add('active');
+
+        let src = el.querySelector('img').getAttribute('src');
+        document.querySelector('.slider-for_img').setAttribute('src',src)
+        document.querySelector('.img-zoom-result').style.backgroundImage = `url("${src}")`
+    })
+})
+

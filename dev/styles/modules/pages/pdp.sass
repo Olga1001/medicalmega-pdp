@@ -38,10 +38,12 @@
 .slider-nav
     .slide 
         +box(56px)
-        border: 1px solid #BCC4C7
+        border: 1px solid transparent
         border-radius: 2px
         padding: 2px 
         margin-bottom: 8px
+        &.active
+            border-color: #BCC4C7
     img 
         +box(100%)
         object-fit: contain
@@ -127,6 +129,9 @@
     cursor: pointer
     +box(40px)
     margin: 0 8px
+    &:hover
+        &:before, &:after
+            background: #96280F
     &:before, &:after 
         +centerXY
         transition: all 0.3s ease
@@ -191,10 +196,11 @@
         font-size: 14px
         line-height: 140%
         color: #000000
-        margin-bottom: 20px
-        display: block
+        span
+            margin-bottom: 20px
+            display: block
     .btn 
-        padding: 0 10px
+        padding: 0
         font-size: 12px
         width: 100%
 
