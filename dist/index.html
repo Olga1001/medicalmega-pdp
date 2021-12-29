@@ -24,36 +24,38 @@
         <div class="midbar">
           <div class="container">
             <div class="flex-center-between"><a class="logo" href="#">Medical<span>Mega</span></a>
-              <button class="btn btn_white" type="button">Advanced Search</button>
+              <button class="btn btn_white" type="button" data-button="advanced-search">Advanced Search</button>
               <form class="form-search">
                 <input type="text" placeholder="Search by Name">
                 <button type="submit"></button>
               </form>
               <div class="align-items-center"><a class="align-items-center midbar_action" href="https://medicalmega.com/myaccount.html"><img class="mr-12" src="img/common/user.svg" alt="icon account"><span>Account</span></a><a class="align-items-center ml-40 midbar_action" href="https://medicalmega.com/cart.html"><img class="mr-12" src="img/common/cart.svg" alt="icon Cart"><span>Cart</span></a></div>
             </div>
-            <form class="advanced-search flex-center-between">
-              <p class="fs-10">Advanced Search</p>
-              <div class="d-flex"> 
-                <input type="text" placeholder="Enter Item #">
-                <input type="text" placeholder="Enter Keyword">
-                <div class="select"> 
-                  <select> 
-                    <option value="Select Category" disabled selected>Select Category</option>
-                    <option value="Category 1">Category 1</option>
-                  </select>
-                </div>
-                <div class="select"> 
-                  <select> 
-                    <option value="Select Manufacturer" disabled selected>Select Manufacturer</option>
-                    <option value="Manufacturer 1">Manufacturer 1</option>
-                  </select>
-                </div>
-                <button class="btn btn_dark" type="submit">Submit</button>
-              </div>
-              <button class="btn_reset" type="reset"></button>
-            </form>
           </div>
         </div>
+        <form class="advanced-search" data-item="advanced-search">
+          <div class="container flex-center-between">
+            <p class="fs-10">Advanced Search</p>
+            <div class="d-flex">
+              <input type="text" placeholder="Enter Item #">
+              <input type="text" placeholder="Enter Keyword">
+              <div class="select">
+                <select>
+                  <option value="Select Category" disabled selected>Select Category</option>
+                  <option value="Category 1">Category 1</option>
+                </select>
+              </div>
+              <div class="select">
+                <select>
+                  <option value="Select Manufacturer" disabled selected>Select Manufacturer</option>
+                  <option value="Manufacturer 1">Manufacturer 1</option>
+                </select>
+              </div>
+              <button class="btn btn_dark" type="submit">Submit</button>
+            </div>
+            <button class="btn_reset" type="reset" data-close="advanced-search"></button>
+          </div>
+        </form>
         <div class="subbar">
           <div class="container d-flex">
             <nav class="nav_category">
@@ -101,8 +103,10 @@
               <div class="trustpilot">trustpilot</div>
             </div>
             <div class="side_two">
-              <div class="slider-for">
-                <div class="slide"> <img src="https://medicalmegaimgs.net/prod/uploaded/product/159907855915375725325f50009f9b40e.jpg" alt="image 2"></div>
+              <div class="slider-for" data-item="show-zoom">
+                <div class="slide"><img id="slider-for_img" src="https://medicalmegaimgs.net/prod/uploaded/product/159907855915375725325f50009f9b40e.jpg" alt="image 2">
+                  <div class="img-zoom-result" id="myresult"></div>
+                </div>
               </div>
               <p class="text-small text-center">Image shown for reference purposes only. Actual product appearance may vary.</p>
             </div>
@@ -212,6 +216,7 @@
         </section>
       </div>
     </div>
+    <script type="application/javascript" src="https://medicalmega.com/js/jquery-3.2.1.min.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

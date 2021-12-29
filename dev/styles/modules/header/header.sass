@@ -131,3 +131,50 @@
 .btn_reset
   background: transparent url('../img/common/close.svg') no-repeat center / contain
   +box(20px)
+  cursor: pointer
+
+.advanced-search
+  border-top: 1px solid #BCC4C7
+  opacity: 0
+  padding: 0
+  height: 0
+  transition: all 0.3s ease
+  &.active
+    padding: 13px 0
+    height: 60px
+    opacity: 1
+  input
+    font-size: 14px
+    line-height: 25px
+    color: #6D7E85
+    padding: 4px 28px
+    background: #E9EBEC
+    border-radius: 30px
+    width: fit-content
+    max-width: 153px
+    text-align: center
+    margin-right: 28px
+  .btn
+    line-height: 29px
+    font-size: 12px
+  .select
+    margin-right: 28px
+
+.select
+  position: relative
+  max-width: 214px
+  &:before
+    content: ''
+    +centerY
+    right: 0
+    +box(30px,100%)
+    background: url("../img/common/arrow-down.svg") no-repeat left center / 14px
+  select
+    background: #E9EBEC
+    border-radius: 30px
+    font-weight: normal
+    font-size: 14px
+    line-height: 25px
+    color: #6D7E85
+    border: none
+    padding: 4px 59px 4px 20px

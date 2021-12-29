@@ -17,8 +17,9 @@
 .col_left
     width: 456px 
     position: sticky
-    top: 170px
+    top: 220px
     height: fit-content
+    z-index: 2
 
 .col_right
     width: calc(100% - 456px)
@@ -45,7 +46,25 @@
         +box(100%)
         object-fit: contain
 
+.img-zoom-lens
+    position: absolute
+    border: 1px solid #d4d4d4
+    width: 140px
+    height: 140px
+    visibility: hidden
+
+.img-zoom-result
+    border: 1px solid #d4d4d4
+    width: 300px
+    height: 300px
+    position: absolute
+    top: 0
+    left: 100%
+    visibility: hidden
+    background-color: #fff
+
 .slider-for
+    position: relative
     +box(360px)
     margin-bottom: 12px
     img 
@@ -66,7 +85,7 @@
     padding: 36px
     height: fit-content
     position: sticky
-    top: 170px
+    top: 220px
 
 .product_content
     padding-top: 28px
