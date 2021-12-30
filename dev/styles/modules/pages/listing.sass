@@ -1,20 +1,31 @@
 .filter
   width: 200px
+  padding-top: 24px
   &_title
     font-size: 18px
     line-height: 28px
-    text-align: center
+    margin-bottom: 24px
 
 .listing
-  width: calc(100% - 200px)
-  padding-left: 48px
-.items
+  &_wrapper
+    width: calc(100% - 200px)
+    padding: 22px 0 22px 48px
+  &_title
+    text-align: center
+    font-weight: 600
+    font-size: 24px
+    line-height: 120%
+    margin-bottom: 20px
+
+.listing_content
   border-top: 1px solid #BCC4C7
   border-left: 1px solid #BCC4C7
+  margin-top: 12px
   .card
     border-left: none
     border-top: none
     border-radius: 0
+    width: 25%
     img
       +box(150px)
     .btn
@@ -29,3 +40,29 @@
   .btn-calc
     +box(24px)
     margin: 0 12px
+
+.count_brand
+  color: #6D7E85
+  margin-left: 4px
+
+.select
+  &_filter
+    margin-bottom: 30px
+    &.active
+      .select_item img
+        transform: scaleY(-1)
+  &_item
+    padding: 11px 0
+    font-size: 20px
+    line-height: 20px
+    color: #6D7E85
+    border-bottom: 1px solid #BCC4C7
+    img
+      transition: all 0.3s ease
+
+.status
+  color: #96280F
+  font-weight: 600
+  position: absolute
+  top: 16px
+  right: 16px

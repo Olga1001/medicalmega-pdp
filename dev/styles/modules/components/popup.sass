@@ -1,0 +1,38 @@
+.popup
+  position: fixed
+  left: 0
+  top: 0
+  +box(100%)
+  background: rgba(#000000,0.5)
+  z-index: 10
+  display: inline-flex
+  opacity: 0
+  pointer-events: none
+  transition: all 0.3s ease
+  &.active
+    opacity: 1
+    pointer-events: auto
+  h3, .title
+    font-weight: 600
+    font-size: 20px
+    line-height: 120%
+    color: #091114
+    margin-bottom: 20px
+  .btn
+    width: 100%
+    margin-top: 20px
+  .btn_reset
+    margin-left: auto
+    display: block
+    margin-bottom: 20px
+
+  &_container
+    background: #FFFFFF
+    border-radius: 8px
+    max-width: 604px
+    width: 100%
+    padding: 16px
+    min-height: 306px
+    margin: auto
+    img
+      +box(150px)

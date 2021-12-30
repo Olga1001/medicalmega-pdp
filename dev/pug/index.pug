@@ -13,33 +13,40 @@ block content
 			.flex-wrap.w-100
 				.filter
 					h3.filter_title Filters
-					.select_filter
-						.select_item.align-items-center
+					.select_filter.active
+						.select_item.flex-center-between
 							p Brands
 							img(src='img/common/arrow-down.svg' alt='icon arrow down')
 						.select_drop
-							label
-								input(type='checkbox' class='checkbox')
-								span.check
-								span Ansell
-									span.count_brand (2)
-							label
-								input(type='checkbox' class='checkbox')
-								span.check
-								span Cardinal Health
-									span.count_brand (5)
-				.listing
+							each val in ['Ansell','Cardinal Health','DRE HEALTH','Dynarex','Genairex','Halyard health','Omni']
+								label.mt-22.align-items-center
+									input(type='checkbox' class='checkbox')
+									span.check
+									span.check_text=val
+										span.count_brand (2)
+					.select_filter.active
+						.select_item.flex-center-between
+							p Price
+							img(src='img/common/arrow-down.svg' alt='icon arrow down')
+						.select_drop
+							each val in ['0 - 20','21 - 40','61 - 80','81 - 100','100 - 200','200 400','> 400']
+								label.mt-22.align-items-center
+									input(type='checkbox' class='checkbox')
+									span.check
+									span.check_text=val
+									span.count_brand (16)
+				.listing_wrapper
 					h2.listing_title Hand Sanitizing
 					.flex-end-between
 						p.c-gray 26 items
 						.align-items-center
-							p.fs-14 Sort by
+							p.fs-14.mr-12 Sort by
 							.select
 								select
 									option(value='Select Category' disabled selected) Featured
 									option(value='Featured 1') Featured 1
-					.flex-wrap.items
-						-var n = 12
+					.flex-wrap.listing_content
+						-var n = 11
 						while (n--)
 							.card
 								a.card_name(href="#")
@@ -52,6 +59,29 @@ block content
 										button.btn-calc.btn-calc_plus(type="button")
 									button.btn.btn_dark(type="button")
 										span $150.00 | Add to Cart
+							if (n == 8)
+								.card
+									p.status Out of Stock
+									a.card_name(href="#")
+										img(src='https://medicalmegaimgs.net/prod/uploaded/product/159907855915375725325f50009f9b40e.jpg' alt='Ansel Latex Exam Gloves, Medium Box of 150')
+										span Ansel Latex Exam Gloves, Medium Box of 150
+									div
+										.flex-center-center.calc
+											button.btn-calc.btn-calc_minus(type="button" disabled)
+											input.calc-qty(type="number" value="1")
+											button.btn-calc.btn-calc_plus(type="button")
+										button.btn.btn_red(type="button" data-button="notify")
+											span notify when available
+	.popup(data-item="notify")
+		form.popup_container
+			button.btn_reset(type="reset" data-close="notify")
+			h3.title Leave Your e-mail to be Notified when it’s Available
+			.flex-center-center
+				img(src='https://medicalmegaimgs.net/prod/uploaded/product/159907855915375725325f50009f9b40e.jpg' alt='Ansel Latex Exam Gloves, Medium Box of 150')
+				.max-295.ml-40
+					input(type='email' placeholder='Your e-mail' required)
+					button.btn.btn_red(type='submit') notify me
+
 
 
 

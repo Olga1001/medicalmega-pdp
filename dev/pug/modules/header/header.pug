@@ -47,15 +47,12 @@ header.header
     .subbar
         .container.d-flex
             nav.nav_category
-                .align-items-center
+                a.align-items-center(href='#')
                     .burger_category
                         .burger_line
                         .burger_line
                         .burger_line
-                    p.p-main All Categories
-                ul.menu_category
-                    each val in []
-                        li
+                    span.p-main All Categories
             ul.d-flex.category_popular
                 each val in ['New Products','Sale Products','Hand Sanitizing','Wound care','Gloves','Disinfectants','Ostomy','Instruments']
                     li 

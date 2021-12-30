@@ -30,6 +30,12 @@ input[type=number]
 input
   appearance: none
   border: none
+  background-color: #E9EBEC
+  border-radius: 30px
+  padding: 4px 20px
+  width: 100%
+  font-size: 14px
+  line-height: 32px
 
 .container
   max-width: 1270px
@@ -59,6 +65,10 @@ input
   padding: 0 40px
   cursor: pointer
   transition: all 0.3s ease
+  &_red
+    background-color: #96280F
+    border-color: #96280F
+    color: #FFFFFF
   &_white
     background: #FFFFFF
     font-size: 10px
@@ -69,19 +79,31 @@ input
     &:hover
       background-color: #96280F
       border-color: #96280F
-      
-@import "modules/modules"
 
-.d-none
-  display: none 
+.check
+  border: 1px solid #091114
+  +box(18px)
+  border-radius: 3px
+  display: block
+  margin-right: 15px
+  &_text
+    font-size: 14px
+    line-height: 18px
+
+.checkbox
+  display: none
+  &:checked ~ .check
+    background: url("../img/common/check.svg") no-repeat center / 18px
+
+
+@import "modules/modules"
 
 .w-100
   width: 100%
 
-.w-fit-content
-  width: fit-content
-
 .relative
   position: relative
 
+.max-295
+  max-width: 295px
 @import "utils/media"

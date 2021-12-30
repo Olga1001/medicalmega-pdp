@@ -1,12 +1,13 @@
-let btnPlus = document.querySelectorAll('.btn-calc_plus'),
-    btnMinus = document.querySelectorAll('.btn-calc_minus'),
-    inputQty = document.querySelectorAll('.calc-qty'),
-    calc = document.querySelectorAll('.calc'),
-    tabs = document.querySelectorAll('.tabs-discription li'),
-    contents = document.querySelectorAll('.content-discription .content-item'),
-    dataButton = document.querySelectorAll('[data-button]'),
-    closeBtn = document.querySelectorAll('[data-close]'),
-    slidesNav = document.querySelectorAll('.slider-nav .slide');
+let btnPlus = document.querySelectorAll('.btn-calc_plus'), //btn +
+    btnMinus = document.querySelectorAll('.btn-calc_minus'), //btn -
+    inputQty = document.querySelectorAll('.calc-qty'), //quantity input
+    calc = document.querySelectorAll('.calc'), // calc wrapper +\-
+    tabs = document.querySelectorAll('.tabs-discription li'), //tabs description
+    contents = document.querySelectorAll('.content-discription .content-item'), // content discription
+    dataButton = document.querySelectorAll('[data-button]'), // btn for open popup or block
+    closeBtn = document.querySelectorAll('[data-close]'), //btn close for hide popup or block
+    slidesNav = document.querySelectorAll('.slider-nav .slide'), //slides navigation
+    slidesFor = document.querySelectorAll('.slider-for'); //slider main
 
 function changeQty(qty,action) {
     if (action == 'plus') {
@@ -53,72 +54,23 @@ for (let i = 0; i < dataButton.length; i++) {
     closeBtn[i].addEventListener('click', () => toggleActive(closeBtn[i].getAttribute('data-close'),false))
 }
 
-//zoom pdp
-function imageZoom(imgID, resultID) {
-    let img, lens, result, cx, cy;
-    img = document.getElementById(imgID);
-    result = document.getElementById(resultID);
-    /*create lens:*/
-    lens = document.createElement("DIV");
-    lens.setAttribute("class", "img-zoom-lens");
-    /*insert lens:*/
-    img.parentElement.insertBefore(lens, img);
-    /*calculate the ratio between result DIV and lens:*/
-    cx = result.offsetWidth / lens.offsetWidth;
-    cy = result.offsetHeight / lens.offsetHeight;
-    /*set background properties for the result DIV:*/
-    result.style.backgroundImage = "url('" + img.src + "')";
-    result.style.backgroundSize = (img.width * cx) + "px " + (img.height * cy) + "px";
-    /*execute a function when someone moves the cursor over the image, or the lens:*/
-    lens.addEventListener("mousemove", moveLens);
-    img.addEventListener("mousemove", moveLens);
-    /*and also for touch screens:*/
-    lens.addEventListener("touchmove", moveLens);
-    img.addEventListener("touchmove", moveLens);
-    function moveLens(e) {
-        var pos, x, y;
-        /*prevent any other actions that may occur when moving over the image:*/
-        e.preventDefault();
-        /*get the cursor's x and y positions:*/
-        pos = getCursorPos(e);
-        /*calculate the position of the lens:*/
-        x = pos.x - (lens.offsetWidth / 2);
-        y = pos.y - (lens.offsetHeight / 2);
-        /*prevent the lens from being positioned outside the image:*/
-        if (x > img.width - lens.offsetWidth) {x = img.width - lens.offsetWidth;}
-        if (x < 0) {x = 0;}
-        if (y > img.height - lens.offsetHeight) {y = img.height - lens.offsetHeight;}
-        if (y < 0) {y = 0;}
-        /*set the position of the lens:*/
-        lens.style.left = x + "px";
-        lens.style.top = y + "px";
-        /*display what the lens "sees":*/
-        result.style.backgroundPosition = "-" + (x * cx) + "px -" + (y * cy) + "px";
-    }
-    function getCursorPos(e) {
-        var a, x = 0, y = 0;
-        e = e || window.event;
-        /*get the x and y positions of the image:*/
-        a = img.getBoundingClientRect();
-        /*calculate the cursor's x and y coordinates, relative to the image:*/
-        x = e.pageX - a.left;
-        y = e.pageY - a.top;
-        /*consider any page scrolling:*/
-        x = x - window.pageXOffset;
-        y = y - window.pageYOffset;
-        return {x : x, y : y};
-    }
-}
-
-imageZoom("forImg", "zoomResult");
-
-document.querySelector('.slider-for').addEventListener('mousemove', (e) => {
-    document.querySelector('.img-zoom-result').style.visibility = 'visible';
-    document.querySelector('.img-zoom-lens').style.visibility = 'visible';
+document.querySelectorAll('.popup').forEach((popup) => {
+    popup.addEventListener('click', (e) => {
+        if (e.target.classList.contains('popup')) {
+            popup.classList.remove('active')
+        }
+    })
 })
-document.querySelector('.slider-for').addEventListener('mouseout', (e) => {
-    document.querySelector('.img-zoom-result').style.visibility = 'hidden';
-    document.querySelector('.img-zoom-lens').style.visibility = 'hidden';
+
+slidesFor.forEach((el) => {
+    el.addEventListener('mousemove', (e) => {
+        document.querySelector('.img-zoom-result').style.visibility = 'visible';
+        document.querySelector('.img-zoom-lens').style.visibility = 'visible';
+    })
+    el.addEventListener('mouseout', (e) => {
+        document.querySelector('.img-zoom-result').style.visibility = 'hidden';
+        document.querySelector('.img-zoom-lens').style.visibility = 'hidden';
+    })
 })
 
 //slider
@@ -130,6 +82,12 @@ slidesNav.forEach((el,i) => {
         let src = el.querySelector('img').getAttribute('src');
         document.querySelector('.slider-for_img').setAttribute('src',src)
         document.querySelector('.img-zoom-result').style.backgroundImage = `url("${src}")`
+    })
+})
+
+document.querySelectorAll('.select_item').forEach((el) => {
+    el.addEventListener('click', () => {
+        el.closest('.select_filter').classList.toggle('active')
     })
 })
 

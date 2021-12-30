@@ -58,18 +58,12 @@
         </form>
         <div class="subbar">
           <div class="container d-flex">
-            <nav class="nav_category">
-              <div class="align-items-center">
+            <nav class="nav_category"><a class="align-items-center" href="#">
                 <div class="burger_category">
                   <div class="burger_line"></div>
                   <div class="burger_line"></div>
                   <div class="burger_line"></div>
-                </div>
-                <p class="p-main">All Categories</p>
-              </div>
-              <ul class="menu_category">
-              </ul>
-            </nav>
+                </div><span class="p-main">All Categories</span></a></nav>
             <ul class="d-flex category_popular">
               <li> <a href="#">New Products</a></li>
               <li> <a href="#">Sale Products</a></li>
@@ -94,26 +88,69 @@
         <div class="flex-wrap w-100">
           <div class="filter">
             <h3 class="filter_title">Filters</h3>
-            <div class="select_filter">
-              <div class="select_item align-items-center">
+            <div class="select_filter active">
+              <div class="select_item flex-center-between">
                 <p>Brands</p><img src="img/common/arrow-down.svg" alt="icon arrow down">
               </div>
               <div class="select_drop">
-                <label>
-                  <input class="checkbox" type="checkbox"><span class="check"></span><span>Ansell<span class="count_brand">(2)</span></span>
+                <label class="mt-22 align-items-center">
+                  <input class="checkbox" type="checkbox"><span class="check"></span><span class="check_text">Ansell<span class="count_brand">(2)</span></span>
                 </label>
-                <label>
-                  <input class="checkbox" type="checkbox"><span class="check"></span><span>Cardinal Health<span class="count_brand">(5)</span></span>
+                <label class="mt-22 align-items-center">
+                  <input class="checkbox" type="checkbox"><span class="check"></span><span class="check_text">Cardinal Health<span class="count_brand">(2)</span></span>
+                </label>
+                <label class="mt-22 align-items-center">
+                  <input class="checkbox" type="checkbox"><span class="check"></span><span class="check_text">DRE HEALTH<span class="count_brand">(2)</span></span>
+                </label>
+                <label class="mt-22 align-items-center">
+                  <input class="checkbox" type="checkbox"><span class="check"></span><span class="check_text">Dynarex<span class="count_brand">(2)</span></span>
+                </label>
+                <label class="mt-22 align-items-center">
+                  <input class="checkbox" type="checkbox"><span class="check"></span><span class="check_text">Genairex<span class="count_brand">(2)</span></span>
+                </label>
+                <label class="mt-22 align-items-center">
+                  <input class="checkbox" type="checkbox"><span class="check"></span><span class="check_text">Halyard health<span class="count_brand">(2)</span></span>
+                </label>
+                <label class="mt-22 align-items-center">
+                  <input class="checkbox" type="checkbox"><span class="check"></span><span class="check_text">Omni<span class="count_brand">(2)</span></span>
+                </label>
+              </div>
+            </div>
+            <div class="select_filter active">
+              <div class="select_item flex-center-between">
+                <p>Price</p><img src="img/common/arrow-down.svg" alt="icon arrow down">
+              </div>
+              <div class="select_drop">
+                <label class="mt-22 align-items-center">
+                  <input class="checkbox" type="checkbox"><span class="check"></span><span class="check_text">0 - 20</span><span class="count_brand">(16)</span>
+                </label>
+                <label class="mt-22 align-items-center">
+                  <input class="checkbox" type="checkbox"><span class="check"></span><span class="check_text">21 - 40</span><span class="count_brand">(16)</span>
+                </label>
+                <label class="mt-22 align-items-center">
+                  <input class="checkbox" type="checkbox"><span class="check"></span><span class="check_text">61 - 80</span><span class="count_brand">(16)</span>
+                </label>
+                <label class="mt-22 align-items-center">
+                  <input class="checkbox" type="checkbox"><span class="check"></span><span class="check_text">81 - 100</span><span class="count_brand">(16)</span>
+                </label>
+                <label class="mt-22 align-items-center">
+                  <input class="checkbox" type="checkbox"><span class="check"></span><span class="check_text">100 - 200</span><span class="count_brand">(16)</span>
+                </label>
+                <label class="mt-22 align-items-center">
+                  <input class="checkbox" type="checkbox"><span class="check"></span><span class="check_text">200 400</span><span class="count_brand">(16)</span>
+                </label>
+                <label class="mt-22 align-items-center">
+                  <input class="checkbox" type="checkbox"><span class="check"></span><span class="check_text">&gt; 400</span><span class="count_brand">(16)</span>
                 </label>
               </div>
             </div>
           </div>
-          <div class="listing">
+          <div class="listing_wrapper">
             <h2 class="listing_title">Hand Sanitizing</h2>
             <div class="flex-end-between">
               <p class="c-gray">26 items</p>
               <div class="align-items-center">
-                <p class="fs-14">Sort by</p>
+                <p class="fs-14 mr-12">Sort by</p>
                 <div class="select">
                   <select>
                     <option value="Select Category" disabled selected>Featured</option>
@@ -122,7 +159,7 @@
                 </div>
               </div>
             </div>
-            <div class="flex-wrap items">
+            <div class="flex-wrap listing_content">
               <div class="card"><a class="card_name" href="#"><img src="https://medicalmegaimgs.net/prod/uploaded/product/159907855915375725325f50009f9b40e.jpg" alt="Ansel Latex Exam Gloves, Medium Box of 150"><span>Ansel Latex Exam Gloves, Medium Box of 150</span></a>
                 <div>
                   <div class="flex-center-center calc">
@@ -153,14 +190,15 @@
                   <button class="btn btn_dark" type="button"><span>$150.00 | Add to Cart</span></button>
                 </div>
               </div>
-              <div class="card"><a class="card_name" href="#"><img src="https://medicalmegaimgs.net/prod/uploaded/product/159907855915375725325f50009f9b40e.jpg" alt="Ansel Latex Exam Gloves, Medium Box of 150"><span>Ansel Latex Exam Gloves, Medium Box of 150</span></a>
+              <div class="card">
+                <p class="status">Out of Stock</p><a class="card_name" href="#"><img src="https://medicalmegaimgs.net/prod/uploaded/product/159907855915375725325f50009f9b40e.jpg" alt="Ansel Latex Exam Gloves, Medium Box of 150"><span>Ansel Latex Exam Gloves, Medium Box of 150</span></a>
                 <div>
                   <div class="flex-center-center calc">
                     <button class="btn-calc btn-calc_minus" type="button" disabled></button>
                     <input class="calc-qty" type="number" value="1">
                     <button class="btn-calc btn-calc_plus" type="button"></button>
                   </div>
-                  <button class="btn btn_dark" type="button"><span>$150.00 | Add to Cart</span></button>
+                  <button class="btn btn_red" type="button" data-button="notify"><span>notify when available</span></button>
                 </div>
               </div>
               <div class="card"><a class="card_name" href="#"><img src="https://medicalmegaimgs.net/prod/uploaded/product/159907855915375725325f50009f9b40e.jpg" alt="Ansel Latex Exam Gloves, Medium Box of 150"><span>Ansel Latex Exam Gloves, Medium Box of 150</span></a>
@@ -247,6 +285,18 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="popup" data-item="notify">
+      <form class="popup_container">
+        <button class="btn_reset" type="reset" data-close="notify"></button>
+        <h3 class="title">Leave Your e-mail to be Notified when it’s Available</h3>
+        <div class="flex-center-center"><img src="https://medicalmegaimgs.net/prod/uploaded/product/159907855915375725325f50009f9b40e.jpg" alt="Ansel Latex Exam Gloves, Medium Box of 150">
+          <div class="max-295 ml-40">
+            <input type="email" placeholder="Your e-mail" required>
+            <button class="btn btn_red" type="submit">notify me</button>
+          </div>
+        </div>
+      </form>
     </div>
     <script type="application/javascript" src="https://medicalmega.com/js/jquery-3.2.1.min.js"></script>
     <script src="js/main.js"></script>
