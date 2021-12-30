@@ -27,15 +27,31 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button
 input[type=number]
   -moz-appearance: textfield
 
+*::-webkit-input-placeholder
+  color: $gray
+  line-height: 25px
+
+*:-moz-placeholder
+  color: $gray
+  line-height: 25px
+
+*::-moz-placeholder
+  color: $gray
+  line-height: 25px
+
+*:-ms-input-placeholder
+  color: $gray
+  line-height: 25px
+
 input
   appearance: none
   border: none
   background-color: #E9EBEC
   border-radius: 30px
-  padding: 4px 20px
+  padding: 7.5px 20px
   width: 100%
   font-size: 14px
-  line-height: 32px
+  line-height: 25px
 
 .container
   max-width: 1270px
@@ -65,20 +81,21 @@ input
   padding: 0 40px
   cursor: pointer
   transition: all 0.3s ease
+  white-space: nowrap
   &_red
-    background-color: #96280F
-    border-color: #96280F
-    color: #FFFFFF
+    background-color: $red
+    border-color: $red
+    color: $white
   &_white
-    background: #FFFFFF
+    background: $white
     font-size: 10px
     color: #1E3944
   &_dark
     background: #1E3944
-    color: #FFFFFF
+    color: $white
     &:hover
-      background-color: #96280F
-      border-color: #96280F
+      background-color: $red
+      border-color: $red
 
 .check
   border: 1px solid #091114

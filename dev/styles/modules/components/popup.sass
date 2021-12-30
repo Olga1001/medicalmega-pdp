@@ -4,11 +4,12 @@
   top: 0
   +box(100%)
   background: rgba(#000000,0.5)
-  z-index: 10
+  z-index: 7
   display: inline-flex
   opacity: 0
   pointer-events: none
   transition: all 0.3s ease
+  padding: 169px 10px 10px
   &.active
     opacity: 1
     pointer-events: auto
@@ -27,7 +28,7 @@
     margin-bottom: 20px
 
   &_container
-    background: #FFFFFF
+    background: $white
     border-radius: 8px
     max-width: 604px
     width: 100%

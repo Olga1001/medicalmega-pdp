@@ -42,7 +42,7 @@
     margin: 0 12px
 
 .count_brand
-  color: #6D7E85
+  color: $gray
   margin-left: 4px
 
 .select
@@ -51,6 +51,9 @@
     &.active
       .select_item img
         transform: scaleY(-1)
+      .select_drop
+        display: block
+
   &_item
     padding: 11px 0
     font-size: 20px
@@ -58,10 +61,12 @@
     color: #6D7E85
     border-bottom: 1px solid #BCC4C7
     img
-      transition: all 0.3s ease
+      transition: all 0.2s ease
+  &_drop
+    display: none
 
 .status
-  color: #96280F
+  color: $red
   font-weight: 600
   position: absolute
   top: 16px
