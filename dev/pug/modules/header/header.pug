@@ -5,61 +5,84 @@ header.header
                 img(src='img/common/quotation.svg' alt='icon quotation')
                 | Customer Service
             .d-flex
-                a(href="tel:17182084380")
+                a(href='tel:17182084380')
                     span.fw-light Local Phone #
                     | 1-718-208-4380
-                a.ml-40(href="tel:18556336342")
+                a.ml-40(href='tel:18556336342')
                     span.fw-light Toll Free Phone #
                     | 1-855-MED-MEGA (633-6342)
     .midbar
         .container
             .flex-center-between
-                a.logo(href="#") Medical
+                a.logo(href='/')
+                    | Medical
                     span Mega
-                button.btn.btn_white(type="button" data-button='advanced-search') Advanced Search
-                form.form-search
-                    input(type="text" placeholder="Search by Name")
-                    button(type="submit")
+                .d-flex
+                    button.btn.btn_white.mr-16(type='button' data-button='advanced-search') Advanced Search
+                    form.form-search
+                        input(type='text' placeholder='Search by Name')
+                        button(type='submit')
+                            svg(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none')
+                                g(clip-path='url(#clip0_114_1946)' stroke='#fff')
+                                    path(d='M6.857 13.313A6.457 6.457 0 106.857.4a6.457 6.457 0 000 12.913zm4.29-2.169l4.571 4.571')
+                                defs
+                                    clippath#clip0_114_1946
+                                        path(fill='#fff' d='M0 0h16v16H0z')
                 .align-items-center
-                    a.align-items-center.midbar_action(href="https://medicalmega.com/myaccount.html")
-                        img.mr-12(src='img/common/user.svg' alt='icon account')
+                    a.align-items-center.midbar_action.mr-16(href='https://medicalmega.com/myaccount.html')
+                        img.mr-8(src='https://olha1001.github.io/medicalmega/pdp-rediesign/img/common/user.svg' alt='icon account')
                         span Account
-                    a.align-items-center.ml-40.midbar_action(href="https://medicalmega.com/cart.html")
-                        img.mr-12(src='img/common/cart.svg' alt='icon Cart')
-                        span Cart
+                    a.align-items-center.midbar_action(href='https://medicalmega.com/cart.html')
+                        img.mr-8(src='https://olha1001.github.io/medicalmega/pdp-rediesign/img/common/cart.svg' alt='icon Cart')
+                        span
+                            | Cart (
+                            span.cart_count 0
+                            | )
     form.advanced-search(data-item='advanced-search')
         .container.flex-center-between
-            p.fs-10 Advanced Search
+            p.fs-14.c-gray Advanced Search
             .d-flex
-                input(type='text' placeholder='Enter Item #')
-                input(type='text' placeholder='Enter Keyword')
-                .select
-                    select
-                        option(value='Select Category' disabled selected) Select Category
-                        option(value='Category 1') Category 1
-                .select
-                    select
-                        option(value='Select Manufacturer' disabled selected) Select Manufacturer
-                        option(value='Manufacturer 1') Manufacturer 1
+                input(type='text' placeholder='Enter Item #' name='search_item')
+                input(type='text' placeholder='Enter Keyword' name='search_keyword')
+                .select.select_category(name='search_c_id')
+                    p.select_current
+                        span Select Category
+                    ul.select_dropdown
+                        li.select_option.active Select Category
+                        li.select_option New Products!
+                .select.select_brand(name='search_m_id')
+                    p.select_current
+                        span Select Manufacturer
+                    ul.select_dropdown.right
+                        li.select_option.active Select Manufacturer
+                        li.select_option 21st century nutritional products
                 button.btn.btn_dark(type='submit') Submit
-            button.btn_reset(type='reset' data-close="advanced-search")
-
+            button.btn_reset(type='reset' data-close='advanced-search')
     .subbar
-        .container.d-flex
+        .container.flex-center-between
             nav.nav_category
                 a.align-items-center(href='#')
-                    .burger_category
-                        .burger_line
-                        .burger_line
-                        .burger_line
+                    img.burger_category(src='https://olha1001.github.io/medicalmega/pdp-rediesign/img/common/burger.svg' alt='icon burger')
                     span.p-main All Categories
             ul.d-flex.category_popular
-                each val in ['New Products','Sale Products','Hand Sanitizing','Wound care','Gloves','Disinfectants','Ostomy','Instruments']
-                    li 
-                        a(href="#")=val
-
-
-    button.burger#burger(type="button")
+                li
+                    a(href='/category/new-products') New Products
+                li
+                    a(href='/sales.html') Sale Products
+                li
+                    a(href='/category/hand-sanitizing') Hand Sanitizing
+                li
+                    a(href='/category/wound-care') Wound care
+                li
+                    a(href='/category/gloves') Gloves
+                li
+                    a(href='/category/disinfectants') Disinfectants
+                li
+                    a(href='/category/ostomy') Ostomy
+                li
+                    a(href='/category/instruments') Instruments
+            p.previous-version switch to the previous version
+    button#burger.burger(type='button')
         span.burger-line.burger-line-top
         span.burger-line.burger-line-center
         span.burger-line.burger-line-bottom

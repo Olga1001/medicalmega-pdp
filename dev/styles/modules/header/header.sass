@@ -1,5 +1,5 @@
-//header
-.header 
+.header
+  -webkit-box-shadow: 4px 8px 12px rgba(0, 0, 0, 0.1)
   box-shadow: 4px 8px 12px rgba(0, 0, 0, 0.1)
   position: sticky
   top: 0
@@ -9,129 +9,175 @@
 
 .supbar
   background: #1E3944
-  padding: 8px 0
+  padding: 10px 0 11px
+
   p, a
     font-size: 12px
     line-height: 1
     color: #E9EBEC
+
   img
     margin-right: 8px
 
 .midbar
   padding: 20px 0
 
-.midbar_action span
-  font-weight: 600
-  font-size: 16px
-  line-height: 19px
-  color: #1E3944
+.midbar_action
+  padding: 12px
+
+  span
+    font-weight: 600
+    font-size: 10px
+    text-transform: uppercase
+    line-height: 10px
+    color: #1E3944
+
+.midbar .btn
+  font-size: 12px
+
+.midbar_action span.cart_count
+  color: #96280F
 
 .logo
-  margin-right: 25px
   font-weight: 800
   font-size: 24px
-  line-height: 30px
+  line-height: 18px
   letter-spacing: 0.01em
   text-transform: uppercase
   color: #1E3944
+
   span
     color: #96280F
 
 .form-search
   position: relative
-  max-width: 545px
-  width: 100%
-  margin-right: 25px
+  width: 545px
+
   input
     background: #E9EBEC
     border-radius: 38px
-    padding: 16px 50px 16px 20px
+    padding: 11px 50px 11px 20px
     width: 100%
+
   button
-    +centerY
+    position: absolute
+    top: 50%
+    -webkit-transform: translateY(-50%)
+    -ms-transform: translateY(-50%)
+    transform: translateY(-50%)
     right: 4px
-    +box(40px)
+    width: 40px
+    height: 40px
+    display: inline-flex
     border-radius: 50%
-    background: #1E3944 url("../img/common/magnifier.svg") no-repeat center / 16px
-    
+    background-color: #1E3944
+    transition: all 0.3s ease
+    cursor: pointer
+    svg
+      margin: auto
+    &:hover
+      background-color: #344D57
+
 .subbar
   border-top: 1px solid #BCC4C7
-  padding: 6px 0
+  padding: 9px 0
 
 .nav_category
+  a
+    padding: 13px 10px 13px 8px
+
   .p-main
     font-weight: 600
-    font-size: 14px
-    line-height: 17px
-    color: #96280F
-    padding: 6px 0
+    font-size: 10px
+    line-height: 10px
+    letter-spacing: 0.05em
+    text-transform: uppercase
+    color: #1E3944
 
 .burger_category
-  position: relative
-  +box(12px,10px)
-  margin-right: 8px
-  .burger_line
-    +centerX
-    background: #96280F
-    width: 12px
-    height: 0.6px
-    &:first-child
-      top: 0
-    &:nth-child(2)
-      top: 50%
-      transform: translate(-50%,-50%)
-    &:last-child
-      bottom: 0
+  width: 18px
+  height: 18px
+  margin-right: 10px
 
-.category_popular
-  a
-    font-weight: 400
-    font-size: 14px
-    line-height: 17px
-    color: #344D57
-    padding: 6px
-    display: block
-    margin-left: 30px
-    &:hover 
-      text-decoration: underline
-      color: $red
+.category_popular a
+  font-weight: 400
+  font-size: 14px
+  line-height: 21px
+  color: #6D7E85
+  padding: 12px 6px
+  display: block
+  margin: 0 8px
+
+  &:hover
+    color: #091114
+
+.previous-version
+  &:hover
+    color: #091114
+
+  font-weight: 600
+  font-size: 10px
+  line-height: 10px
+  letter-spacing: 0.05em
+  text-transform: uppercase
+  cursor: pointer
+  padding: 12px
+  color: #1E3944
 
 .burger
   display: none
-  +box(21px,17px)
+  width: 21px
+  height: 17px
   position: relative
   z-index: 9
   background-color: transparent
   border: none
-  &-line
-    position: absolute
-    left: 0
-    width: 100%
-    height: 2px
-    background-color: #fff
-    transition: all 0.3s ease
-    pointer-events: none
-    &-top
-      top: 0
-    &-center
-      top: 50%
-      transform: translateY(-50%)
-    &-bottom
-      bottom: 0
-  &.active
-    .burger-line
-      top: 50%
-      &-top
-        transform: translateY(-50%) rotate(224deg)
-      &-center
-        opacity: 0
-      &-bottom
-        bottom: auto
-        transform: translateY(-50%) rotate(-224deg)
+
+.burger-line
+  position: absolute
+  left: 0
+  width: 100%
+  height: 2px
+  background-color: #fff
+  -webkit-transition: all 0.3s ease
+  -o-transition: all 0.3s ease
+  transition: all 0.3s ease
+  pointer-events: none
+
+.burger-line-top
+  top: 0
+
+.burger-line-center
+  top: 50%
+  -webkit-transform: translateY(-50%)
+  -ms-transform: translateY(-50%)
+  transform: translateY(-50%)
+
+.burger-line-bottom
+  bottom: 0
+
+.burger.active
+  .burger-line
+    top: 50%
+
+  .burger-line-top
+    -webkit-transform: translateY(-50%) rotate(224deg)
+    -ms-transform: translateY(-50%) rotate(224deg)
+    transform: translateY(-50%) rotate(224deg)
+
+  .burger-line-center
+    opacity: 0
+
+  .burger-line-bottom
+    bottom: auto
+    -webkit-transform: translateY(-50%) rotate(-224deg)
+    -ms-transform: translateY(-50%) rotate(-224deg)
+    transform: translateY(-50%) rotate(-224deg)
 
 .btn_reset
-  background: transparent url('../img/common/close.svg') no-repeat center / contain
-  +box(20px)
+  background: transparent url("https://olha1001.github.io/medicalmega/pdp-rediesign/img/common/close.svg") no-repeat right (center / contain)
+  width: 150px
+  height: 24px
   cursor: pointer
 
 .advanced-search
@@ -139,42 +185,33 @@
   opacity: 0
   padding: 0
   height: 0
+  -webkit-transition: all 0.3s ease
+  -o-transition: all 0.3s ease
   transition: all 0.3s ease
   pointer-events: none
+
   &.active
-    padding: 13px 0
+    padding: 16px 0
     height: 60px
     opacity: 1
     pointer-events: auto
-  input
-    padding: 4px 28px
-    background: #E9EBEC
-    width: fit-content
-    max-width: 153px
-    text-align: center
-    margin-right: 28px
-  .btn
-    line-height: 29px
-    font-size: 12px
-  .select
-    margin-right: 28px
 
-.select
-  position: relative
-  max-width: 214px
-  &:before
-    content: ''
-    +centerY
-    right: 0
-    +box(30px,100%)
-    background: url("../img/common/arrow-down.svg") no-repeat left center / 14px
-  select
-    background: #E9EBEC
-    border-radius: 30px
-    font-weight: normal
-    font-size: 14px
-    line-height: 25px
-    color: #6D7E85
-    border: none
-    padding: 4px 59px 4px 20px
-//!header
+  input
+    padding: 2px 14px
+    background-color: #F0F1F2
+    width: fit-content
+    border: 1px solid #E0E4E5
+    max-width: 115px
+    font-size: 12px
+    line-height: 26px
+    text-align: center
+    margin-right: 20px
+
+  .btn
+    font-weight: 600
+    line-height: 28px
+    margin-left: 20px
+    font-size: 10px
+
+  .select
+    margin-right: 20px

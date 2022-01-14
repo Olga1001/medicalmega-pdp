@@ -26,31 +26,40 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button
 input[type=number]
   -moz-appearance: textfield
 
-*::-webkit-input-placeholder
-  color: $gray
-  line-height: 25px
-
-*:-moz-placeholder
-  color: $gray
-  line-height: 25px
-
-*::-moz-placeholder
-  color: $gray
-  line-height: 25px
-
-*:-ms-input-placeholder
-  color: $gray
-  line-height: 25px
+*
+  &::-webkit-input-placeholder
+    font-family: "Inter", sans-serif
+    font-weight: 400
+    color: #9AA6AB
+    line-height: 26px
+  &:-moz-placeholder
+    font-family: "Inter", sans-serif
+    font-weight: 400
+    color: #9AA6AB
+    line-height: 26px
+  &::-moz-placeholder
+    font-family: "Inter", sans-serif
+    font-weight: 400
+    color: #9AA6AB
+    line-height: 26px
+  &:-ms-input-placeholder
+    font-family: "Inter", sans-serif
+    font-weight: 400
+    color: #9AA6AB
+    line-height: 26px
 
 input
+  -webkit-appearance: none
+  -moz-appearance: none
   appearance: none
   border: none
-  background-color: #E9EBEC
+  background-color: #F0F1F2
   border-radius: 30px
   padding: 7.5px 20px
   width: 100%
   font-size: 14px
-  line-height: 25px
+  outline-color: #344D57
+  line-height: 26px
 
 .container
   max-width: 1270px
@@ -68,48 +77,186 @@ input
 
 .btn
   font-family: "Inter", sans-serif
-  background: #1E3944
+  background-color: #1E3944
   border: 2px solid #1E3944
   border-radius: 40px
+  color: #FBFBFB
   font-weight: 700
   text-align: center
   letter-spacing: 0.05em
   text-transform: uppercase
   line-height: 44px
   font-size: 14px
-  padding: 0 40px
+  padding: 0 21px
   cursor: pointer
+  -webkit-transition: all 0.3s ease
+  -o-transition: all 0.3s ease
   transition: all 0.3s ease
   white-space: nowrap
-  &_red
-    background-color: $red
-    border-color: $red
-    color: $white
-  &_white
-    background: $white
-    font-size: 10px
-    color: #1E3944
-  &_dark
-    background: #1E3944
-    color: $white
-    &:hover
-      background-color: $red
-      border-color: $red
+
+  &:hover, &:focus
+    background-color: #344D57
+    border-color: #344D57
+
+  &[disabled]
+    color: #9AA6AB
+    background-color: #F0F1F2
+    border-color: #F0F1F2
+
+    svg
+      fill: #9AA6AB
+
+.form-search button[disabled] svg
+  fill: #9AA6AB
+
+.product_sidebar .btn[disabled]
+  border-color: #9AA6AB
+
+.btn_white
+  background-color: #FFFFFF
+  color: #1E3944
+
+  &:hover
+    background-color: #F0F1F2
+
+  &:focus
+    background-color: #E9EBEC
+
+  &[disabled]
+    border-color: #F0F1F2
+    background-color: #FBFBFB
+    color: #9AA6AB
+
+.form-search button[disabled]
+  border-color: #F0F1F2
+  background-color: #FBFBFB
+  color: #9AA6AB
 
 .check
-  border: 1px solid #091114
-  +box(18px)
-  border-radius: 3px
+  border: 1px solid #6D7E85
+  width: 16px
+  height: 16px
+  border-radius: 2px
   display: block
-  margin-right: 15px
-  &_text
-    font-size: 14px
-    line-height: 18px
+  margin-right: 8px
+  position: relative
+  &:before
+    content: none
+    +box(8px)
+    background: #091114
+    border-radius: 1px
+    +centerXY()
+
+.check_text
+  font-size: 14px
+  line-height: 150%
 
 .checkbox
   display: none
-  &:checked ~ .check
-    background: url("../img/common/check.svg") no-repeat center / 18px
+  &:checked ~ .check:before
+    content: ''
+
+.select
+  position: relative
+  z-index: 6
+  &.select_sort
+    min-width: 170px
+    .select_current
+      background-color: #FBFBFB
+      line-height: 38px
+      font-size: 14px
+    .select_dropdown
+      width: 100%
+
+.select_brand
+  width: 165px
+
+.select_category
+  width: 142px
+
+.select_current
+  width: 100%
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+  background-color: #F0F1F2
+  border-radius: 30px
+  border: 1px solid #E0E4E5
+  font-weight: normal
+  font-size: 12px
+  line-height: 30px
+  color: #344D57
+  padding: 0 30px 0 16px
+  position: relative
+  &:before
+    content: ''
+    position: absolute
+    top: 50%
+    right: 13px
+    -webkit-transform: translateY(-50%)
+    -ms-transform: translateY(-50%)
+    transform: translateY(-50%)
+    transition: all 0.3s ease
+    width: 0
+    height: 0
+    border-style: solid
+    border-width: 4px 4px 0 4px
+    border-radius: 0.5px
+    border-color: #9AA6AB transparent transparent transparent
+  span
+    pointer-events: none
+    color: #9AA6AB
+
+.select_dropdown
+  position: absolute
+  left: 0
+  top: calc(100% + 4px)
+  background-color: #FBFBFB
+  border: 1px solid #E3E6E7
+  box-shadow: 0 2px 4px rgba(9, 17, 20, 0.1), 0 12px 32px rgba(0, 0, 0, 0.05)
+  transition: all 0.3s ease
+  height: 0
+  visibility: hidden
+  width: max-content
+  max-width: 327px
+  padding: 0 16px
+  overflow-y: auto
+
+  &.right
+    left: auto
+    right: 0
+
+.select.active
+  .select_current:before
+    transform: translateY(-50%) scaleY(-1)
+  .select_dropdown
+    visibility: visible
+    padding-top: 8px
+    padding-bottom: 8px
+    max-height: 330px
+    height: auto
+
+.select_dropdown::-webkit-scrollbar-track
+  width: 6px
+
+.select_option
+  cursor: pointer
+  font-size: 14px
+  line-height: 21px
+  padding: 4px 12px
+  color: #344D57
+  border-radius: 4px
+  border: 1px solid transparent
+  margin: 8px 0
+
+  &:hover
+    border-color: #E0E4E5
+    background-color: #E0E4E5
+
+  &.active
+    background: #344D57
+    border-color: #344D57
+    color: #FBFBFB
 
 @import "modules/modules"
 
@@ -119,7 +266,7 @@ input
 .relative
   position: relative
 
-.max-295
-  max-width: 295px
+.max-391
+  max-width: 391px
 
 @import "utils/media"

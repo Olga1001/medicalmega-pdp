@@ -1,22 +1,25 @@
 //listing
 .filter
   width: 200px
-  padding-top: 24px
+  padding-top: 58px
   &_title
+    margin-bottom: 34px
+    font-weight: 600
     font-size: 18px
-    line-height: 28px
-    margin-bottom: 24px
+    line-height: 120%
+  .select_drop
+    padding: 10px 0
 
 .listing
   &_wrapper
     width: calc(100% - 200px)
-    padding: 22px 0 22px 48px
+    padding: 41px 0 22px 48px
   &_title
     text-align: center
     font-weight: 600
-    font-size: 24px
+    font-size: 36px
     line-height: 120%
-    margin-bottom: 20px
+    margin-bottom: 33px
 
 .listing_content
   border-top: 1px solid #BCC4C7
@@ -32,9 +35,12 @@
     .btn
       font-size: 10px
       line-height: 36px
+      font-weight: 600
   .card_name
     font-size: 12px
-    line-height: 140%
+    line-height: 130%
+    span
+      margin-bottom: 33px
   .calc-qty
     +box(32px)
     line-height: 32px
@@ -43,32 +49,45 @@
     margin: 0 12px
 
 .count_brand
-  color: $gray
+  color: #9AA6AB
   margin-left: 4px
 
 .select
   &_filter
-    margin-bottom: 30px
+    margin-bottom: 26px
     &.active
-      .select_item img
-        transform: scaleY(-1)
+      .select_item:before
+        transform: translateY(-50%) scaleY(-1)
       .select_drop
         display: block
 
   &_item
-    padding: 11px 0
-    font-size: 20px
-    line-height: 20px
-    color: #6D7E85
-    border-bottom: 1px solid #BCC4C7
-    img
-      transition: all 0.2s ease
+    padding: 6px 0
+    font-size: 18px
+    line-height: 150%
+    color: #344D57
+    border-bottom: 1px solid #E0E4E5
+    position: relative
+    &:before
+      content: ''
+      position: absolute
+      top: 50%
+      right: 0
+      -webkit-transform: translateY(-50%)
+      -ms-transform: translateY(-50%)
+      transform: translateY(-50%)
+      transition: all 0.3s ease
+      width: 0
+      height: 0
+      border-style: solid
+      border-width: 4px 4px 0 4px
+      border-radius: 0.5px
+      border-color: #9AA6AB transparent transparent transparent
   &_drop
     display: none
 
 .status
   color: $red
-  font-weight: 600
   position: absolute
   top: 16px
   right: 16px
