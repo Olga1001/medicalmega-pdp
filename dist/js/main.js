@@ -37,15 +37,12 @@ function changeQty(qty, pr, action) {
   }
 
   pr.innerHTML = (+pr.dataset.price * +qty.value).toFixed(2);
-<<<<<<< HEAD
 
   if (qty.closest('.product_sidebar') && qty.value > 1) {
     document.querySelector('.product_sidebar .add-cart span').hidden = false;
   } else {
     document.querySelector('.product_sidebar .add-cart span').hidden = true;
   }
-=======
->>>>>>> 1fbc9d1ce3e8d8f401d9e2bec867225d255aed3a
 } //+/- btns quantity
 
 
@@ -119,7 +116,6 @@ slidesNav.forEach(function (el, i) {
   });
 }); //select
 
-<<<<<<< HEAD
 function remActiveSelect() {
   var dropdowns = document.querySelectorAll(".select");
 
@@ -139,17 +135,6 @@ document.querySelectorAll('.select_current').forEach(function (el) {
   el.nextElementSibling.querySelectorAll('.select_option').forEach(function (option, index) {
     option.addEventListener('click', function (e) {
       e.stopImmediatePropagation();
-=======
-document.querySelectorAll('.select_current').forEach(function (el) {
-  el.closest('.select').addEventListener('click', function (selects) {
-    selects.classList.remove('active');
-  });
-  el.addEventListener('click', function (e) {
-    el.closest('.select').classList.toggle('active');
-  });
-  el.nextElementSibling.querySelectorAll('.select_option').forEach(function (option, index) {
-    option.addEventListener('click', function (e) {
->>>>>>> 1fbc9d1ce3e8d8f401d9e2bec867225d255aed3a
       option.closest('.select').querySelector('.active').classList.remove('active');
       option.classList.add('active');
 
@@ -161,28 +146,11 @@ document.querySelectorAll('.select_current').forEach(function (el) {
     });
   });
 });
-<<<<<<< HEAD
 document.body.addEventListener('click', function (e) {
   if (!e.target.matches('.select_current')) remActiveSelect();
 });
 window.addEventListener('scroll', function () {
   return remActiveSelect();
-=======
-
-function remActiveSelect() {
-  document.querySelectorAll('.select').forEach(function (el) {
-    return el.classList.remove('active');
-  });
-}
-
-document.body.addEventListener('click', function (e) {
-  if (e.target.className != 'select_current') {
-    remActiveSelect();
-  }
-});
-window.addEventListener('scroll', function () {
-  remActiveSelect();
->>>>>>> 1fbc9d1ce3e8d8f401d9e2bec867225d255aed3a
 }); //range
 
 if (document.querySelector('#order-pr')) {
@@ -194,7 +162,6 @@ if (document.querySelector('#order-pr')) {
 document.querySelectorAll('.select_filter').forEach(function (el) {
   el.querySelector('.select_item').addEventListener('click', function () {
     return el.classList.toggle('active');
-<<<<<<< HEAD
   });
 }); // radio buttons
 
@@ -215,7 +182,5 @@ document.querySelectorAll('.available-options .checkbox').forEach(function (chec
       document.querySelector('.product_sidebar .add-cart .pr').dataset.price = optionPrice;
       document.querySelector('.product_sidebar .add-cart .pr').innerHTML = (+optionPrice * +document.querySelector('.product_sidebar .calc-qty').value).toFixed(2);
     }
-=======
->>>>>>> 1fbc9d1ce3e8d8f401d9e2bec867225d255aed3a
   });
 });

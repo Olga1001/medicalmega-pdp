@@ -23,14 +23,11 @@ function changeQty(qty,pr,action) {
         qty.value = 1;
     }
     pr.innerHTML= (+pr.dataset.price * +qty.value).toFixed(2)
-<<<<<<< HEAD
     if (qty.closest('.product_sidebar') && qty.value > 1) {
         document.querySelector('.product_sidebar .add-cart span').hidden = false;
     } else {
         document.querySelector('.product_sidebar .add-cart span').hidden = true;
     }
-=======
->>>>>>> 1fbc9d1ce3e8d8f401d9e2bec867225d255aed3a
 }
 
 //+/- btns quantity
@@ -89,7 +86,6 @@ slidesNav.forEach((el,i) => {
 })
 
 //select
-<<<<<<< HEAD
 function remActiveSelect() {
     let dropdowns = document.querySelectorAll(".select");
     for (let i = 0; i < dropdowns.length; i++) {
@@ -104,28 +100,6 @@ document.querySelectorAll('.select_current').forEach((el) => {
        e.stopImmediatePropagation();
         remActiveSelect();
         el.parentElement.classList.toggle('active');
-=======
-document.querySelectorAll('.select_current').forEach((el) => {
-    el.closest('.select').addEventListener('click',(selects) => {
-        selects.classList.remove('active')
-    });
-    el.addEventListener('click',(e) => {
-
-        el.closest('.select').classList.toggle('active');
-    })
-    el.nextElementSibling.querySelectorAll('.select_option').forEach( (option, index) => {
-        option.addEventListener('click', (e) => {
-            option.closest('.select').querySelector('.active').classList.remove('active');
-
-            option.classList.add('active');
-
-            if (index == 0) {
-                el.innerHTML = `<span>${option.innerHTML}</span>`;
-            } else {
-                el.innerHTML = option.innerHTML;
-            }
-        })
->>>>>>> 1fbc9d1ce3e8d8f401d9e2bec867225d255aed3a
     })
     el.nextElementSibling.querySelectorAll('.select_option').forEach( (option, index) => {
         option.addEventListener('click', (e) => {
@@ -160,7 +134,6 @@ document.querySelectorAll('.select_filter').forEach(el => {
     el.querySelector('.select_item').addEventListener('click', () => el.classList.toggle('active'))
 })
 
-<<<<<<< HEAD
 // radio buttons
 document.querySelectorAll('.available-options .checkbox').forEach((checkbox, index) => {
     checkbox.addEventListener('click', (e) => {
@@ -179,29 +152,3 @@ document.querySelectorAll('.available-options .checkbox').forEach((checkbox, ind
       }
     })
 })
-=======
-function remActiveSelect() {
-    document.querySelectorAll('.select').forEach(el => el.classList.remove('active'))
-}
-
-document.body.addEventListener('click', (e) => {
-    if (e.target.className != 'select_current') {
-        remActiveSelect()
-    }
-})
-
-window.addEventListener('scroll', () => {
-    remActiveSelect()
-})
-
-//range
-if (document.querySelector('#order-pr')) {
-    let subtotal = +document.querySelector('#order-pr').innerText;
-    document.querySelector('.range_slider span').style.width = subtotal * 100 / 150 + '%';
-}
-
-//select filter
-document.querySelectorAll('.select_filter').forEach(el => {
-    el.querySelector('.select_item').addEventListener('click', () => el.classList.toggle('active'))
-})
->>>>>>> 1fbc9d1ce3e8d8f401d9e2bec867225d255aed3a
