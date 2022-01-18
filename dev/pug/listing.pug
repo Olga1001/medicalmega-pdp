@@ -14,23 +14,21 @@ block content
 				.filter
 					h3.filter_title Filters
 					.select_filter.active
-						.select_item.flex-center-between
+						.select_item
 							p Brands
-							img(src='img/common/arrow-down.svg' alt='icon arrow down')
 						.select_drop
 							each val in ['Ansell','Cardinal Health','DRE HEALTH','Dynarex','Genairex','Halyard health','Omni']
-								label.mt-22.align-items-center
+								label.mt-16.align-items-center
 									input(type='checkbox' class='checkbox')
 									span.check
 									span.check_text=val
 										span.count_brand (2)
 					.select_filter.active
-						.select_item.flex-center-between
+						.select_item
 							p Price
-							img(src='img/common/arrow-down.svg' alt='icon arrow down')
 						.select_drop
 							each val in ['0 - 20','21 - 40','61 - 80','81 - 100','100 - 200','200 400','> 400']
-								label.mt-22.align-items-center
+								label.mt-16.align-items-center
 									input(type='checkbox' class='checkbox')
 									span.check
 									span.check_text=val
@@ -40,11 +38,14 @@ block content
 					.flex-end-between
 						p.c-gray 26 items
 						.align-items-center
-							p.fs-14.mr-12 Sort by
-							.select
-								select
-									option(value='Select Category' disabled selected) Featured
-									option(value='Featured 1') Featured 1
+							p.fs-14.mr-16 Sort by
+							.select.select_sort
+								.select_current
+									span by default
+								ul.select_dropdown
+									li.select_option.active by default
+									li.select_option(data-value='Featured') Featured
+									li.select_option(data-value='Featured 1') Featured 1
 					.flex-wrap.listing_content
 						-var n = 11
 						while (n--)
@@ -58,7 +59,9 @@ block content
 										input.calc-qty(type="number" value="1")
 										button.btn-calc.btn-calc_plus(type="button")
 									button.btn.btn_dark(type="button")
-										span $150.00 | Add to Cart
+										span $
+											span.pr(data-price='150.00') 150.00
+											| | Add to Cart
 							if (n == 8)
 								.card
 									p.status Out of Stock
@@ -70,7 +73,7 @@ block content
 											button.btn-calc.btn-calc_minus(type="button" disabled)
 											input.calc-qty(type="number" value="1")
 											button.btn-calc.btn-calc_plus(type="button")
-										button.btn.btn_red(type="button" data-button="notify")
+										button.btn.btn_white(type="button" data-button="notify")
 											span notify when available
 	.popup(data-item="notify")
 		form.popup_container
@@ -78,7 +81,7 @@ block content
 			h3.title Leave Your e-mail to be Notified when it’s Available
 			.flex-center-center
 				img(src='https://medicalmegaimgs.net/prod/uploaded/product/159907855915375725325f50009f9b40e.jpg' alt='Ansel Latex Exam Gloves, Medium Box of 150')
-				.max-295.ml-40
+				.max-391.ml-40
 					input(type='email' placeholder='Your e-mail' required)
 					button.btn.btn_red(type='submit') notify me
 

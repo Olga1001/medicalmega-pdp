@@ -69,6 +69,7 @@ block content
 								.content-item 2
 								.content-item 3
 						.product_sidebar
+<<<<<<< HEAD
 							.product_sidebar_top
 								.shipping_block
 									.align-items-center 
@@ -91,9 +92,26 @@ block content
 										span.pr(data-price="2.75") 2.75
 										|  | 
 									| Add to Cart
+=======
+							.align-items-center 
+								img.mr-16(src='img/common/car.svg' alt='icon shipping')
+								div 
+									p.c-red.text-up.fw-semi.l-t-02 Estimated shipping
+									p.c-gray 2-3 business days*
+							.line
+							.flex-end-between.fw-semi.total
+								p.fs-16 Price:
+								p.fs-24 $
+									span.pr(data-price='2.75') 2.75
+							.flex-center-center.calc 
+								button.btn-calc.btn-calc_minus(type="button" disabled)
+								input.calc-qty(type="number" value="1")
+								button.btn-calc.btn-calc_plus(type="button")
+							button.btn.btn_dark(type="button") Add to Cart
+>>>>>>> 1fbc9d1ce3e8d8f401d9e2bec867225d255aed3a
 			section.similar-products
 				h2.text-center Similar Products
-				.justify-content-between 
+				.justify-content-between.cards_similar
 					- 
 						var cards = [
 							{
@@ -121,7 +139,7 @@ block content
 							}
 						]
 					each val in cards
-						.card
+						.card(data-variant='' data-id='')
 							a.card_name(href="#")
 								img(src=val.image_url alt=val.name)
 								span=val.name
@@ -132,7 +150,11 @@ block content
 									button.btn-calc.btn-calc_plus(type="button")
 								button.btn.btn_dark.add-cart(type="button")
 									span $
+<<<<<<< HEAD
 										span.pr(data-price=val.price)=val.price 
+=======
+										span.pr(data-price=val.price)=val.price
+>>>>>>> 1fbc9d1ce3e8d8f401d9e2bec867225d255aed3a
 										|  | Add to Cart
 
 	script(src="js/zoom.js")
