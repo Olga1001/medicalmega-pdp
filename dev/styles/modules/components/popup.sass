@@ -3,39 +3,50 @@
   position: fixed
   left: 0
   top: 0
-  +box(100%)
-  background: rgba(#000000,0.5)
+  width: 100%
+  height: 100%
+  background: rgba(0, 0, 0, 0.5)
   z-index: 7
+  display: -webkit-inline-box
+  display: -ms-inline-flexbox
   display: inline-flex
   opacity: 0
   pointer-events: none
+  -webkit-transition: all 0.3s ease
+  -o-transition: all 0.3s ease
   transition: all 0.3s ease
   padding: 169px 10px 10px
+
   &.active
     opacity: 1
     pointer-events: auto
+
   h3, .title
     font-weight: 600
-    font-size: 20px
+    font-size: 24px
     line-height: 120%
     color: #091114
-    margin-bottom: 20px
+    margin-bottom: 40px
+
   .btn
     width: 100%
-    margin-top: 20px
+    margin-top: 28px
+
   .btn_reset
     margin-left: auto
     display: block
     margin-bottom: 20px
 
-  &_container
-    background: $white
-    border-radius: 8px
-    max-width: 604px
-    width: 100%
-    padding: 16px
-    min-height: 306px
-    margin: auto
-    img
-      +box(150px)
+.popup_container
+  background: #FFFFFF
+  border-radius: 8px
+  max-width: 701px
+  width: 100%
+  padding: 16px
+  min-height: 330px
+  margin: auto
+
+  img
+    width: 150px
+    height: 150px
 //!popups

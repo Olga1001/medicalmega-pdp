@@ -149,10 +149,11 @@
                   <div class="content-item">3</div>
                 </div>
               </div>
-              <div class="product_sidebar">
+              <div class="product_sidebar disabled">
+                <p class="out-of-stick">Out Of Stock</p>
                 <div class="product_sidebar_top">
                   <div class="shipping_block">
-                    <div class="align-items-center"> <img class="mr-16 icon-car" src="img/common/car.svg" alt="icon shipping">
+                    <div class="align-items-center"> <img class="mr-16 icon-car" src="img/common/car-gray.svg" alt="icon shipping">
                       <div> 
                         <p class="c-red text-up fw-semi l-t-02">Estimated shipping</p>
                         <p class="c-gray">2-3 business days*</p>
@@ -169,9 +170,9 @@
                   <div class="flex-center-center calc"> 
                     <button class="btn-calc btn-calc_minus" type="button" disabled></button>
                     <input class="calc-qty" type="number" value="1" data-case="1">
-                    <button class="btn-calc btn-calc_plus" type="button"></button>
+                    <button class="btn-calc btn-calc_plus" type="button" disabled></button>
                   </div>
-                  <button class="btn btn_dark add-cart" type="button" data-variant="" data-id=""> <span hidden>$<span class="pr" data-price="2.75">2.75</span> | </span>Add to Cart</button>
+                  <button class="btn btn btn_white" type="button" data-button="notify">notify when available</button>
                 </div>
               </div>
             </div>
@@ -223,6 +224,18 @@
           </div>
         </section>
       </div>
+    </div>
+    <div class="popup" data-item="notify">
+      <form class="popup_container">
+        <button class="btn_reset" type="reset" data-close="notify"></button>
+        <h3 class="title">Leave Your e-mail to be Notified when it’s Available</h3>
+        <div class="flex-center-center"><img src="https://medicalmegaimgs.net/prod/uploaded/product/159907855915375725325f50009f9b40e.jpg" alt="Ansel Latex Exam Gloves, Medium Box of 150">
+          <div class="max-391 ml-40">
+            <input type="email" placeholder="Your e-mail" required>
+            <button class="btn" type="submit">notify me</button>
+          </div>
+        </div>
+      </form>
     </div>
     <script src="js/zoom.js"></script>
     <script>imageZoom("forImg", "zoomResult")</script>

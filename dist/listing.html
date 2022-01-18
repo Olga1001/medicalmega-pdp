@@ -7,9 +7,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="keywords" content="">
     <link rel="shortcut icon" href="img/fav_icon.png" type="image/png">
-    <link rel="stylesheet" href="https://medicalmega.com/style.css" type="text/css">
-    <link rel="stylesheet" href="https://medicalmega.com/js/Pikaday/css/pikaday.css" type="text/css">
-    <link rel="stylesheet" href="https://medicalmega.com/../js/jquery-ui-1.12.1.custom/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
   </head>
   <body>
@@ -23,33 +20,48 @@
         </div>
         <div class="midbar">
           <div class="container">
-            <div class="flex-center-between"><a class="logo" href="#">Medical<span>Mega</span></a>
-              <button class="btn btn_white" type="button" data-button="advanced-search">Advanced Search</button>
-              <form class="form-search">
-                <input type="text" placeholder="Search by Name">
-                <button type="submit"></button>
-              </form>
-              <div class="align-items-center"><a class="align-items-center midbar_action" href="https://medicalmega.com/myaccount.html"><img class="mr-12" src="img/common/user.svg" alt="icon account"><span>Account</span></a><a class="align-items-center ml-40 midbar_action" href="https://medicalmega.com/cart.html"><img class="mr-12" src="img/common/cart.svg" alt="icon Cart"><span>Cart</span></a></div>
+            <div class="flex-center-between"><a class="logo" href="/">Medical<span>Mega</span></a>
+              <div class="d-flex">
+                <button class="btn btn_white mr-16" type="button" data-button="advanced-search">Advanced Search</button>
+                <form class="form-search">
+                  <input type="text" placeholder="Search by Name">
+                  <button type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none">
+                      <g clip-path="url(#clip0_114_1946)" stroke="#fff">
+                        <path d="M6.857 13.313A6.457 6.457 0 106.857.4a6.457 6.457 0 000 12.913zm4.29-2.169l4.571 4.571"></path>
+                      </g>
+                      <defs>
+                        <clippath id="clip0_114_1946">
+                          <path fill="#fff" d="M0 0h16v16H0z"></path>
+                        </clippath>
+                      </defs>
+                    </svg>
+                  </button>
+                </form>
+              </div>
+              <div class="align-items-center"><a class="align-items-center midbar_action mr-16" href="https://medicalmega.com/myaccount.html"><img class="mr-8" src="https://olha1001.github.io/medicalmega/pdp-rediesign/img/common/user.svg" alt="icon account"><span>Account</span></a><a class="align-items-center midbar_action" href="https://medicalmega.com/cart.html"><img class="mr-8" src="https://olha1001.github.io/medicalmega/pdp-rediesign/img/common/cart.svg" alt="icon Cart"><span></span>Cart (<span class="cart_count">0</span>)</a></div>
             </div>
           </div>
         </div>
         <form class="advanced-search" data-item="advanced-search">
           <div class="container flex-center-between">
-            <p class="fs-10">Advanced Search</p>
+            <p class="fs-14 c-gray">Advanced Search</p>
             <div class="d-flex">
-              <input type="text" placeholder="Enter Item #">
-              <input type="text" placeholder="Enter Keyword">
-              <div class="select">
-                <select>
-                  <option value="Select Category" disabled selected>Select Category</option>
-                  <option value="Category 1">Category 1</option>
-                </select>
+              <input type="text" placeholder="Enter Item #" name="search_item">
+              <input type="text" placeholder="Enter Keyword" name="search_keyword">
+              <div class="select select_category" name="search_c_id">
+                <p class="select_current"><span>Select Category</span></p>
+                <ul class="select_dropdown">
+                  <li class="select_option active">Select Category</li>
+                  <li class="select_option">New Products!</li>
+                </ul>
               </div>
-              <div class="select">
-                <select>
-                  <option value="Select Manufacturer" disabled selected>Select Manufacturer</option>
-                  <option value="Manufacturer 1">Manufacturer 1</option>
-                </select>
+              <div class="select select_brand active" name="search_m_id">
+                <p class="select_current"><span>Select Manufacturer</span></p>
+                <ul class="select_dropdown right">
+                  <li class="select_option active">Select Manufacturer</li>
+                  <li class="select_option">21st century nutritional products</li>
+                </ul>
               </div>
               <button class="btn btn_dark" type="submit">Submit</button>
             </div>
@@ -57,23 +69,19 @@
           </div>
         </form>
         <div class="subbar">
-          <div class="container d-flex">
-            <nav class="nav_category"><a class="align-items-center" href="#">
-                <div class="burger_category">
-                  <div class="burger_line"></div>
-                  <div class="burger_line"></div>
-                  <div class="burger_line"></div>
-                </div><span class="p-main">All Categories</span></a></nav>
+          <div class="container flex-center-between">
+            <nav class="nav_category"><a class="align-items-center" href="#"><img class="burger_category" src="https://olha1001.github.io/medicalmega/pdp-rediesign/img/common/burger.svg" alt="icon burger"><span class="p-main">All Categories</span></a></nav>
             <ul class="d-flex category_popular">
-              <li> <a href="#">New Products</a></li>
-              <li> <a href="#">Sale Products</a></li>
-              <li> <a href="#">Hand Sanitizing</a></li>
-              <li> <a href="#">Wound care</a></li>
-              <li> <a href="#">Gloves</a></li>
-              <li> <a href="#">Disinfectants</a></li>
-              <li> <a href="#">Ostomy</a></li>
-              <li> <a href="#">Instruments</a></li>
+              <li><a href="/category/new-products">New Products</a></li>
+              <li><a href="/sales.html">Sale Products</a></li>
+              <li><a href="/category/hand-sanitizing">Hand Sanitizing</a></li>
+              <li><a href="/category/wound-care">Wound care</a></li>
+              <li><a href="/category/gloves">Gloves</a></li>
+              <li><a href="/category/disinfectants">Disinfectants</a></li>
+              <li><a href="/category/ostomy">Ostomy</a></li>
+              <li><a href="/category/instruments">Instruments</a></li>
             </ul>
+            <p class="previous-version">switch to the previous version</p>
           </div>
         </div>
         <button class="burger" id="burger" type="button"><span class="burger-line burger-line-top"></span><span class="burger-line burger-line-center"></span><span class="burger-line burger-line-bottom"></span></button>
@@ -298,7 +306,6 @@
         </div>
       </form>
     </div>
-    <script type="application/javascript" src="https://medicalmega.com/js/jquery-3.2.1.min.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

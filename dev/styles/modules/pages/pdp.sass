@@ -1,221 +1,365 @@
 //pdp
 .range_slider
-    position: relative
-    background: #E9EBEC
-    border-radius: 12px
-    height: 12px
-    width: 100%
-    overflow: hidden
-    margin-top: 8px
-    span 
-        background: #1E3944
-        position: absolute
-        left: 0
-        top: 0
-        height: 100%
-        width: 10%
+  position: relative
+  background: #E9EBEC
+  border-radius: 12px
+  height: 12px
+  width: 100%
+  overflow: hidden
+  margin-top: 8px
+
+  span
+    background: #1E3944
+    position: absolute
+    left: 0
+    top: 0
+    height: 100%
 
 .col_left
-    width: 456px 
-    position: sticky
-    top: 220px
-    height: fit-content
-    z-index: 2
+  width: 456px
+  position: sticky
+  top: 200px
+  margin-top: 14px
+  height: -webkit-fit-content
+  height: -moz-fit-content
+  height: fit-content
+  z-index: 2
 
 .col_right
-    width: calc(100% - 456px)
-    max-width: calc(100% - 456px - 48px)
+  width: calc(100% - 456px)
+  max-width: calc(100% - 456px - 48px)
 
 .side_one
-    width: 96px 
-    padding-right: 12px
-    padding-top: 10px
-    +d-flex(space-between,flex-start)
-    flex-direction: column
+  width: 96px
+  padding-top: 10px
+  display: flex
+  justify-content: space-between
+  align-items: flex-start
+  flex-direction: column
 
-.slide_two 
-    width: calc(100% - 96px)
+.trustpilot iframe
+  width: 88% !important
+  height: 91px !important
+
+.slide_two
+  width: calc(100% - 96px)
 
 .slider-nav
-    .slide 
-        +box(56px)
-        border: 1px solid transparent
-        border-radius: 2px
-        padding: 2px 
-        margin-bottom: 8px
-        &.active
-            border-color: #BCC4C7
-    img 
-        +box(100%)
-        object-fit: contain
+  .slide
+    width: 56px
+    height: 56px
+    border: 1px solid transparent
+    border-radius: 2px
+    padding: 2px
+    margin-bottom: 8px
+
+    &.active
+      border-color: #BCC4C7
+
+  img
+    width: 100%
+    height: 100%
+    -o-object-fit: contain
+    object-fit: contain
 
 .img-zoom-lens
-    position: absolute
-    border: 1px solid #d4d4d4
-    width: 140px
-    height: 140px
-    visibility: hidden
+  position: absolute
+  border: 1px solid #d4d4d4
+  width: 140px
+  height: 140px
+  visibility: hidden
 
 .img-zoom-result
-    border: 1px solid #d4d4d4
-    width: 300px
-    height: 300px
-    position: absolute
-    top: 0
-    left: 100%
-    visibility: hidden
-    background-color: #fff
+  border: 1px solid #d4d4d4
+  width: 300px
+  height: 300px
+  position: absolute
+  top: 0
+  left: 100%
+  visibility: hidden
+  background-color: #fff
 
 .slider-for
-    position: relative
-    +box(360px)
-    margin-bottom: 12px
-    img 
-        +box(100%)
-        object-fit: contain
+  position: relative
+  width: 360px
+  height: 360px
+  margin: 49px 0 12px
 
-.list 
-    margin-bottom: 32px
-    li 
-        font-size: 16px
-        line-height: 170%
+  img
+    width: 100%
+    height: 360px
+    -o-object-fit: contain
+    object-fit: contain
+
+.list
+  margin-bottom: 15px
+
+  li
+    font-size: 16px
+    line-height: 170%
 
 .product_sidebar
-    background: $white
-    border: 1px solid #E9EBEC
-    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.08)
-    border-radius: 4px
-    padding: 36px
-    height: fit-content
-    position: sticky
-    top: 220px
+  min-height: 381px
+  background: #F0F1F2
+  border: 1px solid #E3E6E7
+  -webkit-box-shadow: 0 2px 4px rgba(9, 17, 20, 0.1), 0px 12px 32px rgba(0, 0, 0, 0.05)
+  box-shadow: 0 2px 4px rgba(9, 17, 20, 0.1), 0px 12px 32px rgba(0, 0, 0, 0.05)
+  border-radius: 4px
+  width: 280px
+  padding: 50px 40px 40px
+  height: -webkit-fit-content
+  height: -moz-fit-content
+  height: fit-content
+  position: sticky
+  display: flex
+  justify-content: space-between
+  flex-direction: column
+  top: 250px
+
+  .btn
+    padding: 0
+    width: 100%
 
 .product_content
-    padding-top: 28px
-    h2, .title 
-        font-weight: 600
-        font-size: 24px
-        line-height: 120%
-        margin-bottom: 22px
-    .col_mid
-        width: 416px 
+  padding-top: 28px
+
+  h2, .title
+    padding-left: 0
+    font-weight: 600
+    font-size: 32px
+    line-height: 120%
+    margin-bottom: 24px
+
+  .col_mid
+    padding-right: 10px
+    width: calc(100% - 280px)
+    max-width: 426px
+
+.out-of-stick
+  position: absolute
+  top: 16px
+  right: 16px
+  font-size: 14px
+  line-height: 150%
+  color: #96280F !important
 
 .line
-    background: #BCC4C7
-    width: 100%
-    height: 1px
-    display: block 
-    margin: 12px 0
+  background: #DCE0E1
+  width: 100%
+  height: 1px
+  display: block
+  margin: 12px 0
 
-.price
-    padding: 13px 0
-    margin-bottom: 20px
+.total
+  padding: 10px 0
+  margin-bottom: 25px
 
-.calc 
-    margin-bottom: 16px
+.calc
+  margin-bottom: 16px
+
+  &.disabled
+    pointer-events: none
+    opacity: 0.7
 
 .calc-qty
-    +box(40px)
-    line-height: 40px
-    color: #171717
-    font-size: 12px
-    background: #E9EEF0
-    border-radius: 50%
-    text-align: center
-    padding: 0
+  width: 40px
+  height: 40px
+  line-height: 40px
+  color: #171717
+  font-size: 12px
+  background-color: #FBFBFB
+  border: 1px solid #E0E4E5
+  border-radius: 50%
+  text-align: center
+  padding: 0
 
 .btn-calc
-    position: relative
-    background-color: transparent
-    cursor: pointer
-    +box(40px)
-    margin: 0 8px
-    &:hover
-        &:before, &:after
-            background: #96280F
-    &:before, &:after 
-        +centerXY
-        transition: all 0.3s ease
-        background: #1E3944
-    &[disabled]
-        &:before, &:after 
-            background: #BCC4C7
-    &:before
-        content: ''
-        +box(14px,2px)
-    &:after
-        +box(2px,14px)
-    &_plus
-        &:after 
-            content: ''
+  position: relative
+  background-color: transparent
+  cursor: pointer
+  width: 40px
+  height: 40px
+  margin: 0 4px
+
+  &:hover
+    &:before, &:after
+      background: #96280F
+
+  &:before, &:after
+    position: absolute
+    left: 50%
+    top: 50%
+    -webkit-transform: translate(-50%, -50%)
+    -ms-transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%)
+    -webkit-transition: all 0.3s ease
+    -o-transition: all 0.3s ease
+    transition: all 0.3s ease
+    background: #1E3944
+
+  &[disabled]
+    &:before, &:after
+      background: #BCC4C7
+
+  &:before
+    content: ''
+    width: 14px
+    height: 2px
+
+  &:after
+    width: 2px
+    height: 14px
+
+.btn-calc_plus:after
+  content: ''
 
 .content-discription
-    color: #344D57
-    padding-top: 24px
-    p
-        font-size: 16px
-        line-height: 150%
-        margin-bottom: 15px
-        &:last-child
-            margin-bottom: 0
-    
-.tabs-discription
-    li 
-        font-size: 14px
-        line-height: 17px
-        color: #091114
-        border-bottom: 1px solid #BCC4C7
-        padding: 16px 15px 
-        cursor: pointer
-        &:first-child 
-            padding-left: 0
-        &:last-child 
-            padding-right: 0
-        &.active 
-            border-bottom-color: #091114
-            font-weight: 600
-            color: #091114
-            
+  color: #6D7E85
+  padding-top: 9px
+  font-size: 16px
+  line-height: 150%
+
+  *
+    color: #6D7E85
+
+  p
+    margin-top: 15px
+
+  ul
+    margin-top: 15px
+    padding-left: 20px
+
+    li
+      list-style-type: disc
+
+  table td
+    border-bottom: 1px solid #344D57
+    padding: 4px 0
+
+    &:first-child
+      color: #091114
+      width: 40%
+      padding-right: 10px
+      word-break: break-word
+
+.tabs-discription li
+  text-transform: lowercase
+  font-size: 14px
+  line-height: 21px
+  color: #091114
+  border-bottom: 1px solid #BCC4C7
+  padding: 13px 15px
+  cursor: pointer
+
+  &:first-letter
+    text-transform: uppercase
+
+  &:first-child
+    padding-left: 0
+
+  &:last-child
+    padding-right: 0
+
+  &.active
+    border-bottom-color: #091114
+    font-weight: 600
+    color: #091114
+
 .content-item
-    display: none 
-    &.active 
-        display: block
+  display: none
+
+  &.active
+    display: block
 
 .card
-    max-width: 281px
-    width: calc(25% - 10px)
-    background: $white
-    border: 1px solid #BCC4C7
-    border-radius: 4px
-    padding: 40px 
-    display: flex 
-    justify-content: space-between
-    flex-direction: column
-    position: relative
-    img 
-        +box(100%,200px)
-        margin-bottom: 20px
-    &_name
-        font-weight: 600
-        font-size: 14px
-        line-height: 140%
-        color: #000000
-        span
-            margin-bottom: 20px
-            display: block
-    .btn 
-        padding: 0
-        font-size: 12px
-        width: 100%
+  max-width: 281px
+  width: calc(25% - 10px)
+  background: #FFFFFF
+  border: 1px solid #BCC4C7
+  border-radius: 4px
+  padding: 40px
+  display: flex
+  justify-content: space-between
+  flex-direction: column
+  position: relative
+
+  img
+    width: 100%
+    height: 199px
+    -o-object-fit: contain
+    object-fit: contain
+    margin-bottom: 16px
+
+.card_name
+  font-weight: 600
+  font-size: 14px
+  line-height: 130%
+  color: #344D57
+
+  span
+    margin-bottom: 20px
+    display: block
+
+.card .btn
+  padding: 0
+  font-size: 12px
+  width: 100%
 
 .similar-products
-    padding: 60px 0
-    h2 
-        font-weight: 600
-        font-size: 22px
-        line-height: 27px
-        margin-bottom: 56px
+  padding: 60px 0
 
-.product 
-    padding-bottom: 45px
+  h2
+    font-weight: 600
+    font-size: 24px
+    line-height: 29px
+    margin-bottom: 56px
+
+.product
+  padding-top: 17px
+  padding-bottom: 60px
+
+.product_sidebar.disabled
+  .product_sidebar_top, .calc
+    pointer-events: none
+
+  p
+    color: #9AA6AB
+
+  .radio-check
+    border-color: #E3E6E7
+
+    span
+      color: #BCC4C7 !important
+
+  .calc-qty
+    border-color: #E3E6E7
+    color: #BCC4C7
+
+.available-options
+  .justify-content-between label
+    width: 48%
+
+  .fs-14
+    margin: 15px 0 5px
+
+.radio-check
+  background: #FBFBFB
+  border: 1px solid #E0E4E5
+  border-radius: 2px
+  display: block
+  padding: 11px 0
+
+  span
+    font-size: 12px
+    line-height: 150%
+    text-align: center
+    color: #344D57
+    display: block
+
+    &.radio-check_price
+      font-weight: 600
+      font-size: 14px
+      line-height: 130%
+      color: #091114
+      margin-top: 8px
 //!pdp

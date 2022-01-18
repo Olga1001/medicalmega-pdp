@@ -77,19 +77,28 @@ block content
 											p.c-red.text-up.fw-semi.l-t-02 Estimated shipping
 											p.c-gray 2-3 business days*
 									.line
-								.flex-center-between.fw-semi.total
-									p.fs-14 Price:
-									p.fs-24 $
-										span.pr-state 2.75
+								.available-options
+									p.fs-14.fw-semi Available Options: 
+									.justify-content-between
+										label
+											input.checkbox(type='radio' name='radio' checked)
+											span.radio-check
+												span Each
+												span.radio-check_price $15.26
+										label
+											input.checkbox(type='radio' name='radio' disabled)
+											span.radio-check
+												span Pack of 12
+												span.radio-check_price $95.00
 							div
 								.flex-center-center.calc 
 									button.btn-calc.btn-calc_minus(type="button" disabled)
 									input.calc-qty(type="number" value="1" data-case="1")
 									button.btn-calc.btn-calc_plus(type="button")
-								button.btn.btn_dark.add-cart(type="button" data-variant="" data-id="") 
+								button.btn.btn.btn_dark.add-cart(type="button" data-variant="" data-id="") 
 									span(hidden) $
-										span.pr(data-price="2.75") 2.75
-										|  | 
+										span.pr(data-price="15.26") 15.26
+										|  |  
 									| Add to Cart
 			section.similar-products
 				h2.text-center Similar Products
@@ -134,6 +143,14 @@ block content
 									span $
 										span.pr(data-price=val.price)=val.price 
 										|  | Add to Cart
-
+	.popup(data-item="notify")
+		form.popup_container
+			button.btn_reset(type="reset" data-close="notify")
+			h3.title Leave Your e-mail to be Notified when it’s Available
+			.flex-center-center
+				img(src='https://medicalmegaimgs.net/prod/uploaded/product/159907855915375725325f50009f9b40e.jpg' alt='Ansel Latex Exam Gloves, Medium Box of 150')
+				.max-391.ml-40
+					input(type='email' placeholder='Your e-mail' required)
+					button.btn(type='submit') notify me
 	script(src="js/zoom.js")
 	script imageZoom("forImg", "zoomResult")

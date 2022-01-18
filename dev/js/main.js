@@ -7,9 +7,10 @@ let btnPlus = document.querySelectorAll('.btn-calc_plus'), //btn +
     dataButton = document.querySelectorAll('[data-button]'), // btn for open popup or block
     closeBtn = document.querySelectorAll('[data-close]'), //btn close for hide popup or block
     slidesNav = document.querySelectorAll('.slider-nav .slide'), //slides navigation
-    slidesFor = document.querySelectorAll('.slider-for'); //slider main
+    slidesFor = document.querySelectorAll('.slider-for .slide'), //slider main
+    price = document.querySelectorAll('.pr'); //price
 
-function changeQty(qty,action) {
+function changeQty(qty,pr,action) {
     if (action == 'plus') {
         qty.value = parseInt(qty.value) + 1;
     } else if (action == 'minus') {
@@ -21,12 +22,19 @@ function changeQty(qty,action) {
         qty.previousElementSibling.disabled = true;
         qty.value = 1;
     }
+    pr.innerHTML= (+pr.dataset.price * +qty.value).toFixed(2)
+    if (qty.closest('.product_sidebar') && qty.value > 1) {
+        document.querySelector('.product_sidebar .add-cart span').hidden = false;
+    } else {
+        document.querySelector('.product_sidebar .add-cart span').hidden = true;
+    }
 }
 
 //+/- btns quantity
 calc.forEach((el, i) => {
-    btnPlus[i].addEventListener('click', () => changeQty(inputQty[i],'plus'))
-    btnMinus[i].addEventListener('click', () => changeQty(inputQty[i],'minus'))
+    btnPlus[i].addEventListener('click', () => changeQty(inputQty[i], price[i],'plus'))
+    btnMinus[i].addEventListener('click', () => changeQty(inputQty[i], price[i],'minus'))
+    inputQty[i].addEventListener('input', () => changeQty(inputQty[i], price[i]))
 })
 
 //descriptions
@@ -54,14 +62,6 @@ for (let i = 0; i < dataButton.length; i++) {
     closeBtn[i].addEventListener('click', () => toggleActive(closeBtn[i].getAttribute('data-close'),false))
 }
 
-document.querySelectorAll('.popup').forEach((popup) => {
-    popup.addEventListener('click', (e) => {
-        if (e.target.classList.contains('popup')) {
-            popup.classList.remove('active')
-        }
-    })
-})
-
 slidesFor.forEach((el) => {
     el.addEventListener('mousemove', (e) => {
         document.querySelector('.img-zoom-result').style.visibility = 'visible';
@@ -85,9 +85,70 @@ slidesNav.forEach((el,i) => {
     })
 })
 
-document.querySelectorAll('.select_item').forEach((el) => {
-    el.addEventListener('click', () => {
-        el.closest('.select_filter').classList.toggle('active')
+//select
+function remActiveSelect() {
+    let dropdowns = document.querySelectorAll(".select");
+    for (let i = 0; i < dropdowns.length; i++) {
+        if (dropdowns[i].classList.contains('active')) {
+            dropdowns[i].classList.remove('active');
+        }
+    }
+}
+
+document.querySelectorAll('.select_current').forEach((el) => {
+    el.addEventListener('click', (e) => {
+       e.stopImmediatePropagation();
+        remActiveSelect();
+        el.parentElement.classList.toggle('active');
+    })
+    el.nextElementSibling.querySelectorAll('.select_option').forEach( (option, index) => {
+        option.addEventListener('click', (e) => {
+            e.stopImmediatePropagation()
+            option.closest('.select').querySelector('.active').classList.remove('active');
+
+            option.classList.add('active');
+
+            if (index == 0) {
+                el.innerHTML = `<span>${option.innerHTML}</span>`;
+            } else {
+                el.innerHTML = option.innerHTML;
+            }
+        })
     })
 })
 
+document.body.addEventListener('click', (e) => {
+    if (!e.target.matches('.select_current')) remActiveSelect();
+})
+
+window.addEventListener('scroll', () => remActiveSelect())
+
+//range
+if (document.querySelector('#order-pr')) {
+    let subtotal = +document.querySelector('#order-pr').innerText;
+    document.querySelector('.range_slider span').style.width = subtotal * 100 / 150 + '%';
+}
+
+//select filter
+document.querySelectorAll('.select_filter').forEach(el => {
+    el.querySelector('.select_item').addEventListener('click', () => el.classList.toggle('active'))
+})
+
+// radio buttons
+document.querySelectorAll('.available-options .checkbox').forEach((checkbox, index) => {
+    checkbox.addEventListener('click', (e) => {
+      if (checkbox.checked) {
+        let optionAvailable = checkbox.nextElementSibling.querySelectorAll('span')[0],
+        optionPrice = checkbox.nextElementSibling.querySelector('.radio-check_price').innerHTML.replace('$',''),
+        caseCount = 1;
+        if (optionAvailable.innerText.includes('Each')) {
+          caseCount = 1;
+        } else {
+          caseCount = optionAvailable.innerText.replace(/\D/g, '')
+        }
+        document.querySelector('.product_sidebar .calc-qty').dataset.case = caseCount;
+        document.querySelector('.product_sidebar .add-cart .pr').dataset.price = optionPrice;
+        document.querySelector('.product_sidebar .add-cart .pr').innerHTML = (+optionPrice * +document.querySelector('.product_sidebar .calc-qty').value).toFixed(2);
+      }
+    })
+})
