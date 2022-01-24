@@ -313,6 +313,34 @@ input
     border-color: #344D57
     color: #FBFBFB
 
+.arrow_button
+  cursor: pointer
+  &_prev
+    margin-left: -26px
+  &_next
+    margin-right: -26px
+  &[disabled] svg path
+    fill: #BCC4C7
+
+.arrow_buttons
+  position: absolute
+  top: 50%
+  transform: translateY(-50%)
+  left: 0
+  width: 100%
+  z-index: 0
+  display: flex
+  justify-content: space-between
+
+.scroll-x
+  overflow-x: auto
+  &::-webkit-scrollbar
+    display: none
+
+.tns-outer
+  margin-left: -4px
+  margin-right: -4px
+
 @import "modules/modules"
 
 .w-100
