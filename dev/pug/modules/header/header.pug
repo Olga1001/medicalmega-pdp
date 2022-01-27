@@ -61,9 +61,35 @@ header.header
     .subbar
         .container.flex-center-between
             nav.nav_category
-                a.align-items-center(href='#')
+                .align-items-center.select_category
                     img.burger_category(src='https://olha1001.github.io/medicalmega/pdp-rediesign/img/common/burger.svg' alt='icon burger')
-                    span.p-main All Categories
+                    p.p-main All Categories
+                .dropdown_categories
+                    ul.alphabet 
+                        each val, index in ['a','b','c','d','e','f','g','h','i','l','m','n','o','p','r','s','t','u','v','w']
+                            li(class=index==0?'active':'')=val
+                    .list_categories 
+                        ul.active
+                            each val in ['Aerosol Machines','Aids to Daily Living','Ambulatory Aids','Ambulatory Equipment','Anti-Coagulation','Apparel','Appliances Durable Goods']
+                                li 
+                                    a(href="#")=val
+                        ul
+                            each val in ['Baby Care','Beauty','Body Pressure Relief & Positioning']
+                                li 
+                                    a(href="#")=val
+                        ul
+                            each val in ['Casting Products','Casualty Training Kits','Clinical Laboratory','Cold and Flu','Cough','CPAP']
+                                li 
+                                    a(href="#")=val
+                        ul
+                            each val in ['Dental Items','Deodorizers','Diabetes','Diagnostic Instruments & Supplies','Diagnostics & Self Care','Disinfectant Hand Soap & Hand Cleaning','Disinfectant Spray & Cleaning Spray','Disinfectants','Disposables','Dme','Drainage & Suction']
+                                li 
+                                    a(href="#")=val
+                        -var n = 16
+                        while n--
+                            ul 
+                                li 
+                                    a
             ul.d-flex.category_popular
                 li
                     a(href='/category/new-products') New Products

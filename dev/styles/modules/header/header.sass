@@ -83,9 +83,63 @@
   border-top: 1px solid #BCC4C7
   padding: 9px 0
 
-.nav_category
+.select_category
+  padding: 13px 10px 13px 8px
+  border-radius: 100px
+  transition: all 0.3s ease
+
+.dropdown_categories
+  position: absolute
+  top: 99%
+  left: -100px
+  display: flex
+  padding-top: calc(1% + 9px)
+  opacity: 0
+  pointer-events: none
+
+.alphabet
+  padding: 20px 0
+  min-width: 61px
+  background: #FFFFFF
+  border: 1px solid #E3E6E7
+  li
+    font-size: 12px
+    line-height: 29px
+    text-align: center
+    color: #6d7e85
+    margin-bottom: 3px
+    text-transform: uppercase
+    cursor: pointer
+    &.active 
+      color: #96280F
+      font-weight: 600
+      font-size: 24px
+
+.list_categories 
+  padding: 20px 40px
+  width: 327px
+  background: #FBFBFB
+  ul 
+    display: none 
+    &.active 
+      display: block
   a
-    padding: 13px 10px 13px 8px
+    font-size: 16px
+    line-height: 150%
+    color: #344D57
+    margin-bottom: 12px
+    display: block
+    &:hover 
+      color: #091114
+
+.nav_category
+  position: relative
+  &:hover 
+    .select_category
+      background: #E9EBEC
+    .dropdown_categories
+      opacity: 1
+      pointer-events: auto
 
   .p-main
     font-weight: 600
